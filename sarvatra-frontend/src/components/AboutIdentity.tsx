@@ -17,11 +17,12 @@ const AboutIdentity = () => {
         <motion.div
             className="relative p-8 bg-opacity-75 w-1/2"
             initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            whileInView={{ opacity: 1}}
+            viewport={{ amount: "all" }}
+            transition={{ duration: 1, delay: 1 }}
         >
-            <h1 className='text-4xl font-gotu mb-4'>The Identity</h1>
-            <p>The symbol for Sarvatva encapsulates the concept of "wholeness," derived from its Sanskrit roots. Nestled within the wave's curves are two dots, symbolizing the dual aspects of a unified whole. One dot represents supreme consciousness, while the other signifies individual consciousness. The harmonious placement of these dots within the wave underscores their interconnectedness, illustrating that true wholeness arises from the balanced interplay between universal and individual consciousness.</p>
+            <h1 className='text-4xl font-gotu mb-6'>The Identity</h1>
+            <p className='w-[90%]'>The symbol for Sarvatva encapsulates the concept of "wholeness," derived from its Sanskrit roots. Nestled within the wave's curves are two dots, symbolizing the dual aspects of a unified whole. One dot represents supreme consciousness, while the other signifies individual consciousness. The harmonious placement of these dots within the wave underscores their interconnectedness, illustrating that true wholeness arises from the balanced interplay between universal and individual consciousness.</p>
         </motion.div>
     </div>
   )
