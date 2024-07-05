@@ -1,4 +1,5 @@
 import AboutHero from "../components/AboutHero"
+import AboutIdentity from "../components/AboutIdentity"
 import Navbar from "../components/Navbar"
 
 const AboutPage = () => {
@@ -6,9 +7,7 @@ const AboutPage = () => {
     <div>
         <Navbar />
         <AboutHero />
-        <div className="h-screen bg-white">
-        <p>Your next component goes here...</p>
-      </div>
+        <AboutIdentity />
     </div>
   )
 }

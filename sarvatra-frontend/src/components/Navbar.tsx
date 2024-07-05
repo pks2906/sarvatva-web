@@ -20,7 +20,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-10 transition-colors duration-300 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'}`}>
+    <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'bg-white text-black' : 'bg-transparent text-white'}`}>
       <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={44}/>
       <div className='flex space-x-2 md:gap-x-4 text-sm md:text-md'>
         <Link to={'/'}>
