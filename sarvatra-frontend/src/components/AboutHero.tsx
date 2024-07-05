@@ -1,62 +1,40 @@
-// Hero.js
-import React, { useState, useEffect } from 'react';
+import { useEffect, useState } from "react";
 import vid from '../assets/about-hero-vid.mp4';
 
-interface HeroProps {
-    setScrollBlocked: (blocked: boolean) => void;
+const AboutHero = () => {
+    const [scrolled, setScrolled] = useState(false);
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (window.scrollY > window.innerHeight * 0) {
+                setScrolled(true);
+            } else {
+                setScrolled(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+  return (
+    <div className="relative h-[110vh]">
+        <video 
+            className="absolute top-0 left-0 w-full h-full object-cover"
+            src={vid}
+            autoPlay
+            loop
+            muted
+        />
+        <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${scrolled ? 'bg-black bg-opacity-70' : ''}`}>
+            <h1 className={`text-white text-5xl font-bold transition-all duration-700 ${scrolled ? 'mt-5 text-2xl' : ''}`}>
+                Wholeness
+            </h1>
+            <p className={`text-white mt-10 opacity-0 transition-opacity duration-700 ${scrolled ? 'opacity-100' : ''}`}>
+                Sarvatva is inspired by the Vedas and the profound knowledge they offer about metaphysical concepts such as the fundamental nature of reality, existence, and consciousness. Deeply rooted in this ancient wisdom, our vedic furniture collections are a harmonious fusion of age old indian craftsmanship and contemporary aesthetics. Each Sarvata creation is an invitation to reconnect with the supreme consciousness and feel the wholeness within.
+            </p>
+        </div>
+    </div>
+  )
 }
 
-const AboutHero = ({ setScrollBlocked }: HeroProps) => {
-  const [scrolled, setScrolled] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  const handleScroll = () => {
-    const currentScrollY = window.scrollY;
-    setScrollY(currentScrollY);
-    if (currentScrollY > window.innerHeight / 10) {
-      setScrolled(true);
-      setScrollBlocked(false); // Allow scrolling past Hero section
-    } else {
-      setScrolled(false);
-      setScrollBlocked(true); // Block scrolling
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  return (
-    <div className="relative h-screen overflow-hidden">
-      <div
-        className={`absolute top-0 left-0 w-full h-full bg-black transition-opacity duration-300 ${scrolled ? 'opacity-50' : 'opacity-100'}`}
-        style={{
-          background: `url('path/to/your/video-poster.jpg') center center/cover no-repeat`,
-          transform: `translateY(${scrollY * 0.5}px)`,
-        }}
-      >
-        <video
-          className="w-full h-full object-cover"
-          src={vid}
-          autoPlay
-          loop
-          muted
-          style={{
-            transform: `translateY(${scrollY * 0.5}px)`,
-          }}
-        />
-      </div>
-      <div className="relative z-10 flex items-center justify-center h-full">
-        <div className={`text-center transition-all duration-300 ${scrolled ? 'transform -translate-y-16' : 'transform translate-y-0'}`}>
-          <h1 className="text-white text-5xl font-bold">Hero Title</h1>
-          <p className={`text-white mt-4 transition-opacity duration-300 ${scrolled ? 'opacity-100' : 'opacity-0'}`}>
-            This is the paragraph that appears after scrolling.
-          </p>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default AboutHero;
+export default AboutHero
