@@ -26,10 +26,10 @@ const AboutHero = () => {
             muted
         />
         <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-700 ${scrolled ? 'bg-black bg-opacity-70' : ''}`}>
-            <h1 className={`text-[#B65217] text-2xl md:text-4xl transition-all duration-700 mb-10 ${scrolled ? 'md:translate-y-[-10vh] text-white' : 'mt-72 md:mt-32'}`}>
+            <h1 className={`text-[#B65217] text-2xl md:text-4xl transition-all duration-700 mb-10 ${scrolled ? 'md:translate-y-[-10vh] text-white' : 'mt-72 sm:mt-40 md:mt-48'}`}>
                 सर्वत्वा | Wholeness
             </h1>
-            <div className={`text-white text-sm md:text-xl opacity-0 flex flex-col gap-y-6 md:gap-y-8 text-justify w-[60%] md:w-[50%] transition-all duration-700 ${scrolled ? 'md:translate-y-[-10vh] opacity-100' : ''}`}>
+            <div className={`text-white font-avenir text-sm md:text-xl opacity-0 flex flex-col gap-y-6 md:gap-y-8 text-justify w-[60%] md:w-[50%] transition-all duration-700 ${scrolled ? 'md:translate-y-[-10vh] opacity-100' : ''}`}>
                 <p>
                     Sarvatva is inspired by the Vedas and the profound knowledge they offer about metaphysical concepts such as the fundamental nature of reality, existence, and consciousness. 
                 </p>

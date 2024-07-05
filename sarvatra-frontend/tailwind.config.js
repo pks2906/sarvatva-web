@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         gotu: ['Gotu', 'sans-serif'],
+        avenir: ['Avenir', 'sans-serif'],
       },
     },
   },
