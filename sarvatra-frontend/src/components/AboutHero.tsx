@@ -17,9 +17,9 @@ const AboutHero = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
   return (
-    <div className="relative h-[105vh] font-gotu">
+    <div className="relative h-[105vh] font-gotu bg-black">
         <video 
-            className="absolute top-0 left-0 w-full h-full object-cover"
+            className="absolute top-0 left-0 w-full h-full object-cover opacity-90"
             src={vid}
             autoPlay
             loop

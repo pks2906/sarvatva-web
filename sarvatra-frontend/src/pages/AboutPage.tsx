@@ -1,3 +1,4 @@
+import AboutCore from "../components/AboutCore"
 import AboutHero from "../components/AboutHero"
 import AboutIdentity from "../components/AboutIdentity"
 import AboutPurpose from "../components/AboutPurpose"
@@ -9,6 +10,7 @@ const AboutPage = () => {
         <Navbar />
         <AboutHero />
         <AboutIdentity />
+        <AboutCore />
         <AboutPurpose />
     </div>
   )
