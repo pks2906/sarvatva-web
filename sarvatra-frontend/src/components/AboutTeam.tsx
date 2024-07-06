@@ -1,4 +1,4 @@
-import founder1 from '../assets/founder1.png';
+import founder1 from '../assets/founder.jpg';
 import founder2 from '../assets/founder2.png';
 import founder3 from '../assets/founder3.png';
 
