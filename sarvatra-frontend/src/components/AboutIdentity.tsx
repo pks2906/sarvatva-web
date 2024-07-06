@@ -12,7 +12,7 @@ const AboutIdentity = () => {
             initial={{ x: "0%", y: 0, width: "100%" }}
             whileInView={{ x: "0%", y: "30px", width: "50%", height: "585px", marginRight: "30px", borderRadius: "10px" }}
             viewport={{ amount: "some", once: true }}
-            transition={{ duration: 0.5, delay: 1.25 }}
+            transition={{ duration: 1, delay: 0.5 }}
         />
         <motion.div
             className="relative p-8 bg-opacity-75 w-1/2"
