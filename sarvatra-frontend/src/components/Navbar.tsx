@@ -21,17 +21,17 @@ const Navbar = () => {
 
   return (
     // Translucent background like Apple website
-    <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-85 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
+    <div className={`font-avenir fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-85 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
       <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={63}/>
       <div className='flex space-x-2 md:gap-x-4 text-sm md:text-md'>
         <Link to={'/'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30'}`}>Collection</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Collection</p>
         </Link>
         <Link to={'/about'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30'}`}>About Us</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Crafting Wholeness</p>
         </Link>
         <Link to={'/contact'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30'}`}>Contact Us</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Contact Us</p>
         </Link>
       </div>
     </div>
