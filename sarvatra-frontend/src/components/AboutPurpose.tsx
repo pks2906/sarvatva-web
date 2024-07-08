@@ -10,12 +10,12 @@ const AboutPurpose = () => {
             alt="identity"
             className="absolute left-0 h-full object-cover z-10"
             initial={{ x: "0%", y: 0, width: "100%" }}
-            whileInView={{ x: "0%", y: "30px", width: "50%", height: "585px", marginLeft: "30px", borderRadius: "10px" }}
+            whileInView={{ x: "0%", y: "30px", width: "40%", height: "500px", marginLeft: "72px", borderRadius: "10px" }}
             viewport={{ amount: "some", once: true }}
             transition={{ duration: 1, delay: 0.5 }}
         />
         <motion.div
-            className="absolute right-0 w-2/5"
+            className="absolute right-0 w-2/5 mr-[72px]"
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ amount: "some" }}
