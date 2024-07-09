@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 
 const AboutCore = () => {
-  const [ref, inView] = useInView({ threshold: 0.1 });
+  const [ref] = useInView({ threshold: 0.1 });
 
   const fadeIn = {
     opacity: 1,

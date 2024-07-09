@@ -13,7 +13,7 @@ const HomeDynamic = ({ image, shlok, desc }: HomeDynamicProps) => {
   const imageRef = useRef<HTMLImageElement | null>(null);
   const [zoomPhase, setZoomPhase] = useState(0);
 
-  const { ref, inView } = useInView({ threshold: 0.5 });
+  const { ref } = useInView({ threshold: 0.5 });
 
   const handleScroll = () => {
     const scrollPosition = window.scrollY;

@@ -14,7 +14,7 @@ type TeamMember = {
 };
 
 const AboutTeam = () => {
-  const [ref, inView] = useInView({ threshold: 0.1 });
+  const [ref] = useInView({ threshold: 0.1 });
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
 
   const fadeIn = {
