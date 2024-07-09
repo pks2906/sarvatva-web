@@ -12,8 +12,8 @@ const AboutIdentity = () => {
         whileInView={{ 
           x: "0%", 
           y: "30px", 
-          width: "100%", 
-          height: "auto", 
+          width: "600px", 
+          height: "585px", 
           marginRight: "0", 
           borderRadius: "0" 
         }}
