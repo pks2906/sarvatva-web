@@ -56,7 +56,7 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 py-8 mt-8">
+    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 py-8 mt-20">
       <h1 className="text-4xl font-gotu text-center">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 text-lg text-center">
         Crafting Extraordinary from the Mundane
