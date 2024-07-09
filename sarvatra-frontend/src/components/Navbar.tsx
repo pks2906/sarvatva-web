@@ -27,7 +27,10 @@ const Navbar = () => {
 
   return (
     <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-85 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
-      <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={63}/>
+      <div className='flex items-center space-x-4 font-avenir font-light text-lg'>
+        <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={63}/> 
+        <p>SARVATVA</p>
+      </div>
       <div className='md:hidden'>
         <button onClick={toggleMenu}>
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
