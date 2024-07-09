@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import vid from "../assets/land-vid-bg.png";
+import vid from "../assets/landing-vid.mp4";
 
 const HomeHero = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -19,9 +19,12 @@ const HomeHero = () => {
     }, []);
   return (
     <div className="relative h-[105vh] font-gotu bg-black">
-        <img 
+        <video 
             className="absolute top-0 left-0 w-full h-full object-cover opacity-90"
             src={vid}
+            autoPlay
+            muted
+            loop
         />
         <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 ${scrolled ? 'bg-black bg-opacity-70' : ''}`}>
             <h1 className={`text-white text-2xl md:text-4xl transition-all duration-1000 mb-10 ${scrolled ? 'md:translate-y-[-10vh] text-white' : 'mt-72 sm:mt-40 md:mt-48'}`}>

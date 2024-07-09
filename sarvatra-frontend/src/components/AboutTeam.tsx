@@ -25,7 +25,7 @@ const AboutTeam = () => {
   return (
     <motion.div
       ref={ref}
-      className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0"
+      className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 py-8 mt-8"
       initial="hidden"
       animate={controls}
       variants={fadeInVariants}
