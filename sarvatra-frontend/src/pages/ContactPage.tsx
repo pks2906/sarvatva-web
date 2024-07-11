@@ -1,6 +1,7 @@
 import { useState, ChangeEvent } from "react";
 import Navbar from "../components/Navbar";
 import banner from "../assets/contactus.png";
+// import Footer from "../components/Footer";
 
 const ContactPage = () => {
   const [selectedOption, setSelectedOption] = useState("none");
@@ -72,6 +73,7 @@ const ContactPage = () => {
           </>
         )}
       </div>
+      {/* <Footer /> */}
     </div>
   );
 };

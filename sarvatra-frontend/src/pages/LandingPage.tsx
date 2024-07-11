@@ -10,6 +10,7 @@ import img6 from "../assets/product6.jpg";
 import img7 from "../assets/product7.jpg";
 import AboutTeam from "../components/AboutTeam";
 import HomeAnimate from "../components/HomeAnimate";
+// import Footer from "../components/Footer";
 
 const LandingPage = () => {
   return (
@@ -24,6 +25,7 @@ const LandingPage = () => {
       <HomeAnimate image={img6} shlok="माया, यत्र वास्तविकता प्रश्नः भवति।" desc="Illusion, where reality become a question."/>
       <HomeStatic image={img7} shlok="समर्पणं, यत्र जीवनं स्वप्रवाहं गृह्णाति।" desc="Surrender, where life takes its own flow."/>
       <AboutTeam />
+      {/* <Footer /> */}
     </div>
   )
 }
