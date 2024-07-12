@@ -1,9 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import founder1 from '../assets/founder.jpg';
 import founder2 from '../assets/founder2.png';
 import founder3 from '../assets/founder3.png';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
+import line from '../assets/line.svg';
+import decorator from '../assets/decorator.svg';
 
 type TeamMember = {
   img: string;
@@ -16,6 +18,8 @@ type TeamMember = {
 const AboutTeam = () => {
   const [ref] = useInView({ threshold: 0.1 });
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
+  const containerRef = useRef<HTMLDivElement | null>(null);
 
   const fadeIn = {
     opacity: 1,
@@ -25,10 +29,16 @@ const AboutTeam = () => {
 
   const handleCardClick = (index: number) => {
     setSelectedCard(index);
+    setTimeout(() => {
+      cardRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 200);
   };
 
   const handleCloseCard = () => {
     setSelectedCard(null);
+    setTimeout(() => {
+      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 200);
   };
 
   const teamMembers: TeamMember[] = [
@@ -56,49 +66,60 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={ref} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 py-8 md:mt-32 mt-20">
-      <h1 className="text-4xl font-gotu text-center">The Alchemists</h1>
-      <p className="mb-8 mt-2 font-avenir text-neutral-500 text-lg text-center">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-32 mt-12">
+      <div className='flex flex-col w-full justify-center items-center gap-y-2 mb-4 py-4'>
+        <img src={line} alt="line" width={1050}/>
+        <img src={decorator} alt="sarvatva logo" width={50}/>
+      </div>
+      <h1 className="text-3xl md:text-4xl font-gotu text-center">The Alchemists</h1>
+      <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
       <div className="flex flex-col md:flex-row w-full mt-4">
         {teamMembers.map((member, index) => (
-          <motion.div
-            key={index}
-            className="w-full md:w-1/3 flex flex-col items-center mb-16 md:mb-0 relative"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={fadeIn}
-            viewport={{ once: true }}
-          >
-            <div className="overflow-hidden block rounded-full">
-              <img
-                src={member.img}
-                alt={member.name}
-                className="rounded-full h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
-              />
-            </div>
-            <h1 className="font-gotu text-3xl mt-8 mb-2 text-center">{member.name}</h1>
-            <p className="font-avenir text-xl font-light opacity-80 mt-2 mb-2 text-center">{member.title}</p>
-            <p className="font-avenir text-neutral-400 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
-            <p
-              className="font-avenir px-2 text-center hover:text- transition text-lg w-2/3 cursor-pointer"
-              onClick={() => handleCardClick(index)}
+          <div key={index} className="w-full md:w-1/3 flex flex-col items-center mb-16 md:mb-0 relative">
+            <motion.div
+              className="flex flex-col items-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={fadeIn}
+              viewport={{ once: true }}
             >
-              Read more
-            </p>
+              <div className="overflow-hidden block rounded-full">
+                <img
+                  src={member.img}
+                  alt={member.name}
+                  className="rounded-full h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
+                />
+              </div>
+              <h1 className="font-gotu text-2xl md:text-3xl mt-8 mb-2 text-center">{member.name}</h1>
+              <p className="font-avenir text-lg md:text-xl font-light opacity-80 mt-2 mb-2 text-center">{member.title}</p>
+              <p className="font-avenir text-sm text-neutral-400 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
+              <p
+                className="font-avenir px-2 text-center hover:text- transition text-lg w-2/3 cursor-pointer"
+                onClick={() => handleCardClick(index)}
+              >
+                Read more
+              </p>
+            </motion.div>
             {selectedCard === index && (
-              <div className="absolute inset-0 bg-white bg-opacity-95 flex flex-col items-center justify-center py-4 px-8">
+              <motion.div
+                className="w-full flex flex-col items-center justify-center py-4 px-8 mt-4"
+                initial={{ opacity: 0, y: 50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                ref={el => (cardRefs.current[index] = el)}
+              >
                 <button
-                  className="absolute top-4 right-4 text-[#ab9f82] text-2xl font-bold"
+                  className="text-[#ab9f82] text-2xl font-bold self-end"
                   onClick={handleCloseCard}
                 >
                   &times;
                 </button>
                 <h1 className="font-gotu text-2xl mb-4">{member.name}</h1>
                 <p className="font-avenir font-light opacity-80 mb-4 text-justify">{member.more}</p>
-              </div>
+              </motion.div>
             )}
-          </motion.div>
+          </div>
         ))}
       </div>
     </div>
