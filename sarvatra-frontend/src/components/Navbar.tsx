@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
-import logo from '../assets/navbar-logo.svg';
-import darkLogo from '../assets/navbar-logo-dark.svg';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa'; // Import icons for hamburger menu
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { motion, AnimatePresence } from 'framer-motion';
+import logo from '../assets/white-logo.svg';
+import darkLogo from '../assets/black-logo.svg';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
-  const [menuOpen, setMenuOpen] = useState(false); // State for hamburger menu
+  const [menuOpen, setMenuOpen] = useState(false);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -25,14 +26,18 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  const menuVariants = {
+    hidden: { opacity: 0, height: 0 },
+    visible: { opacity: 1, height: 'auto' }
+  };
+
   return (
     <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-70 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
       <div className='flex items-center space-x-4 font-avenir font-light text-lg'>
-        <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={63}/> 
-        <p>SARVATVA</p>
+        <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={200} />
       </div>
-      <div className='md:hidden'>
-        <button onClick={toggleMenu}>
+      <div className='md:hidden flex items-center'>
+        <button onClick={toggleMenu} className="flex items-center">
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
@@ -47,17 +52,28 @@ const Navbar = () => {
           <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Let's Connect</p>
         </Link>
       </div>
-      <div className={`md:hidden absolute top-full left-0 w-full transition-all duration-300 ${menuOpen ? 'block bg-white bg-opacity-90 backdrop-blur-sm' : 'hidden'}`}>
-        <Link to={'/'}>
-          <p className={`py-4 text-center text-[18px] transition-all ${menuOpen ? 'text-black hover:bg-black hover:bg-opacity-10' : (scrolled ? 'text-black hover:bg-black hover:bg-opacity-10' : 'text-white hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]')}`}>Vedic Treasures</p>
-        </Link>
-        <Link to={'/about'}>
-          <p className={`py-4 text-center text-[18px] transition-all ${menuOpen ? 'text-black hover:bg-black hover:bg-opacity-10' : (scrolled ? 'text-black hover:bg-black hover:bg-opacity-10' : 'text-white hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]')}`}>Crafting Wholeness</p>
-        </Link>
-        <Link to={'/contact'}>
-          <p className={`py-4 text-center text-[18px] transition-all ${menuOpen ? 'text-black hover:bg-black hover:bg-opacity-10' : (scrolled ? 'text-black hover:bg-black hover:bg-opacity-10' : 'text-white hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]')}`}>Let's Connect</p>
-        </Link>
-      </div>
+      <AnimatePresence>
+        {menuOpen && (
+          <motion.div
+            className={`md:hidden absolute top-full left-0 w-full bg-white bg-opacity-90 backdrop-blur-sm`}
+            initial="hidden"
+            animate="visible"
+            exit="hidden"
+            variants={menuVariants}
+            transition={{ duration: 0.3 }}
+          >
+            <Link to={'/'}>
+              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Treasures</p>
+            </Link>
+            <Link to={'/about'}>
+              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Crafting Wholeness</p>
+            </Link>
+            <Link to={'/contact'}>
+              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Let's Connect</p>
+            </Link>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };
