@@ -1,4 +1,4 @@
-import HomeHero from "../components/HomeHero"
+// import HomeHero from "../components/HomeHero"
 import HomeStatic from "../components/HomeStatic"
 import Navbar from "../components/Navbar"
 import img1 from "../assets/static1.png";
@@ -11,12 +11,16 @@ import img7 from "../assets/product7.jpg";
 import AboutTeam from "../components/AboutTeam";
 import HomeAnimate from "../components/HomeAnimate";
 import Footer from "../components/Footer";
+import HeroParallax from "../components/HeroParallax";
+import vid from "../assets/landing-vid.mp4";
+
+const heroSubhead = "Going 13.8 Billion years back in time, when all creation originated from the supreme consciousness or “That one”, our collection ponders upon what existed before the universe was born and how all creation came about. Each design is an intention, to manifest this cosmic mystery, into tangibility."
 
 const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <HomeHero />
+      <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/>
       <HomeStatic image={img1} shlok="चैतन्यं आस्तित्वस्य प्रथमा भाव:" desc="Consciousness, the first sense of being."/>
       <HomeAnimate image={img2} shlok="इच्छा, उच्चतरम प्राप्ति हेतुम आकञ्चितवाँन।" desc="Desire, the longing for something higher."/>
       <HomeStatic image={img3} shlok="अभिव्यक्तिः, सृष्टेः आलोकः।" desc="Manifestation, the glimpse of creation."/>
