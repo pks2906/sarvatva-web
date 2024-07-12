@@ -1,4 +1,3 @@
-// import HomeHero from "../components/HomeHero"
 import HomeStatic from "../components/HomeStatic"
 import Navbar from "../components/Navbar"
 import img1 from "../assets/static1.png";
