@@ -1,14 +1,23 @@
-import { useState, ChangeEvent } from "react";
+import { useState, ChangeEvent, useRef, useEffect } from "react";
 import Navbar from "../components/Navbar";
 import banner from "../assets/contactus.png";
 import Footer from "../components/Footer";
 
 const ContactPage = () => {
   const [selectedOption, setSelectedOption] = useState("none");
+  const formRef = useRef<HTMLDivElement | null>(null);
 
   const handleOptionChange = (e: ChangeEvent<HTMLSelectElement>) => {
     setSelectedOption(e.target.value);
   };
+
+  useEffect(() => {
+    if (selectedOption !== "none") {
+      formRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    } else {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  }, [selectedOption]);
 
   return (
     <div>
@@ -33,7 +42,7 @@ const ContactPage = () => {
         </div>
         {selectedOption !== "none" && (
           <>
-            <div className="grid grid-cols-1 md:grid-cols-2 my-8 gap-x-4 md:gap-x-24 gap-y-4 md:gap-y-10 w-full md:w-[90%]">
+            <div ref={formRef} className="grid grid-cols-1 md:grid-cols-2 my-8 gap-x-4 md:gap-x-24 gap-y-4 md:gap-y-10 w-full md:w-[90%]">
               <input type="text" placeholder="Company / Name *" className="placeholder:text-[#393939] font-avenir font-light text-lg md:text-xl px-4 py-2 border-b border-[#393939]" />
               <input type="text" placeholder="Country *" className="placeholder:text-[#393939] font-avenir font-light text-lg md:text-xl px-4 py-2 border-b border-[#393939]" />
               <input type="text" placeholder="First Name *" className="placeholder:text-[#393939] font-avenir font-light text-lg md:text-xl px-4 py-2 border-b border-[#393939]" />
