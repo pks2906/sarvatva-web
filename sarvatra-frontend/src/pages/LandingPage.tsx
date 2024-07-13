@@ -1,17 +1,9 @@
-import HomeStatic from "../components/HomeStatic"
 import Navbar from "../components/Navbar"
-import img1 from "../assets/static1.png";
-import img2 from "../assets/product2.jpg"
-import img3 from "../assets/static2.png";
-import img4 from "../assets/product4.jpg";
-import img5 from "../assets/product5.jpg";
-import img6 from "../assets/product6.jpg";
-import img7 from "../assets/product7.jpg";
 import AboutTeam from "../components/AboutTeam";
-import HomeAnimate from "../components/HomeAnimate";
 import Footer from "../components/Footer";
+import vid from "../assets/landing-vid-ezgif.com-reverse-video.mp4"
 import HeroParallax from "../components/HeroParallax";
-import vid from "../assets/hero-vid.mp4";
+import ProductCard from "../components/ProductCard";
 
 const heroSubhead = "Going 13.8 Billion years back in time, when all creation originated from the supreme consciousness or “That one”, our collection ponders upon what existed before the universe was born and how all creation came about. Each design is an intention, to manifest this cosmic mystery, into tangibility."
 
@@ -20,13 +12,7 @@ const LandingPage = () => {
     <div>
       <Navbar />
       <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/>
-      <HomeStatic image={img1} shlok="चैतन्यं आस्तित्वस्य प्रथमा भाव:" desc="Consciousness, the first sense of being."/>
-      <HomeAnimate image={img2} shlok="इच्छा, उच्चतरम प्राप्ति हेतुम आकञ्चितवाँन।" desc="Desire, the longing for something higher."/>
-      <HomeStatic image={img3} shlok="अभिव्यक्तिः, सृष्टेः आलोकः।" desc="Manifestation, the glimpse of creation."/>
-      <HomeAnimate image={img4} shlok="अवरोधः, अग्रे कूर्दनस्य कृते एकः सोपानः।" desc="Hurdle, a stepback for a leap ahead."/>
-      <HomeStatic image={img5} shlok="अविरोध, सदेच्छा शान्तिमार्ग:।" desc="Harmony, the path to tranquility."/>
-      <HomeAnimate image={img6} shlok="माया, यत्र वास्तविकता प्रश्नः भवति।" desc="Illusion, where reality become a question."/>
-      <HomeStatic image={img7} shlok="समर्पणं, यत्र जीवनं स्वप्रवाहं गृह्णाति।" desc="Surrender, where life takes its own flow."/>
+      <ProductCard />
       <AboutTeam />
       <Footer />
     </div>
