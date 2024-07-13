@@ -19,7 +19,7 @@ const AboutPurpose = () => {
           className="absolute right-0 w-2/5 mr-[72px]"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          viewport={{ amount: "some" }}
+          viewport={{ amount: "some", once: true }}
           transition={{ duration: 0.75, delay: 0.5 }}
         >
           <h1 className='text-4xl font-gotu mb-6'>The Higher Purpose</h1>

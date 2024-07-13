@@ -31,7 +31,7 @@ const AboutHero = () => {
         />
         <div className={`absolute inset-0 flex flex-col items-center justify-center transition-all duration-1000 ${scrolled ? 'bg-[#301105] bg-opacity-70' : ''}`}>
             <motion.h1 
-                className={`text-[#B65217] mt-40 md:mt-6 text-4xl md:text-7xl transition-all duration-1000 mb-10 ${scrolled ? 'md:translate-y-[-10vh] text-white' : ''}`}
+                className={`text-[#B65217] mt-44 md:mt-6 text-4xl md:text-7xl transition-all duration-1000 mb-10 ${scrolled ? 'md:translate-y-[-10vh] text-white' : ''}`}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: fadeHeading }}
                 transition={{ duration: 2 }}
