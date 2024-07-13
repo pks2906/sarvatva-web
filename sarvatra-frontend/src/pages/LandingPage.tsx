@@ -11,7 +11,7 @@ import AboutTeam from "../components/AboutTeam";
 import HomeAnimate from "../components/HomeAnimate";
 import Footer from "../components/Footer";
 import HeroParallax from "../components/HeroParallax";
-import vid from "../assets/landing-vid.mp4";
+import vid from "../assets/hero-vid.mp4";
 
 const heroSubhead = "Going 13.8 Billion years back in time, when all creation originated from the supreme consciousness or “That one”, our collection ponders upon what existed before the universe was born and how all creation came about. Each design is an intention, to manifest this cosmic mystery, into tangibility."
 
