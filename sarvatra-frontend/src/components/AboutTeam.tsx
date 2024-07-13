@@ -3,7 +3,6 @@ import founder1 from '../assets/founder.jpg';
 import founder2 from '../assets/founder2.png';
 import founder3 from '../assets/founder3.png';
 import { motion } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
 import line from '../assets/line.svg';
 import decorator from '../assets/decorator.svg';
 
@@ -16,7 +15,7 @@ type TeamMember = {
 };
 
 const AboutTeam = () => {
-  const [ref] = useInView({ threshold: 0.1 });
+  // const [ref] = useInView({ threshold: 0.1 });
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
