@@ -1,5 +1,4 @@
 
-
 interface ProductProps {
   title: string;
   description: string;
@@ -11,10 +10,10 @@ const ProductCard = ({ title, description, src, align }: ProductProps) => {
   return (
     <div className='h-[150vh] sticky top-0'>
       <div className="h-[100vh]">
-        <img src={src} alt="" className='h-full object-cover'/>
-        <div className={`absolute top-[30%] text-white ${align}-[5%] w-[40%]`}>
-           <div className='flex flex-col'>
-                <h1 className='font-bold font-gotu text-6xl py-4 mb-8'>
+        <img src={src} alt="" className='h-full object-cover z-0'/>
+        <div className={`absolute top-[25%] text-white ${align} w-[40%]`}>
+           <div className='flex flex-col mx-auto'>
+                <h1 className='font-bold font-gotu text-4xl md:text-6xl py-4 mb-8'>
                     {title}
                 </h1>
                 <p className='w-[50%] font-avenir'>

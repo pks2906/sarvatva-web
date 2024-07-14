@@ -65,7 +65,7 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-[-50vh] mt-[-50vh]">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-32 mt-12">
       <div className='flex flex-col w-full justify-center items-center gap-y-2 mb-4 py-4'>
         <img src={line} alt="line" width={1050}/>
         <img src={decorator} alt="sarvatva logo" width={50}/>

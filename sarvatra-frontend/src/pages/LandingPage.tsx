@@ -13,7 +13,7 @@ const LandingPage = () => {
     <div>
       <Navbar />
       <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/>
-      <div>
+      <div className="mb-[-50vh]">
         {products.map((product, index) => {
           return <ProductCard key={index} {...product}/>
         })}
