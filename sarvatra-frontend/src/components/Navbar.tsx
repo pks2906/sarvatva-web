@@ -32,7 +32,7 @@ const Navbar = () => {
   };
 
   return (
-    <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-70 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
+    <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-30 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
       <div className='flex items-center space-x-4 font-avenir font-light text-lg'>
         <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={200} />
       </div>
