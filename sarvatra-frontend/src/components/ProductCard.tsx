@@ -27,15 +27,15 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
             &times;
           </button>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-medium py-2 border-b border-[#393939]"/>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
+          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-white font-avenir font-bold py-2 border-b border-[#393939]"/>
           <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-medium py-2 border-b border-[#393939]"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <select name="communication" id="mode" className="bg-transparent font-avenir font-light text-start py-2 border-b border-[#393939] text-[#393939]">
             <option value="none">Mode of Communication</option>
             <option value="email">Email</option>
-            <option value="sms">SMS</option>
+            <option value="sms">WhatsApp</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
@@ -129,10 +129,10 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
       >
         <div className={`absolute top-[25%] text-white ${align} w-[40%]`}>
            <div className='flex flex-col mx-auto'>
-                <h1 className='font-bold font-staatliches tracking-widest text-4xl md:text-6xl py-4 mb-8'>
+                <h1 className='font-bold font-staatliches tracking-[0.125em] text-opacity-80 text-4xl md:text-6xl py-4 mb-8'>
                     {title}
                 </h1>
-                <p className='w-[60%] font-avenir' dangerouslySetInnerHTML={{ __html: description }}></p>
+                <p className='w-[60%] text-opacity-80 font-avenir' dangerouslySetInnerHTML={{ __html: description }}></p>
                 <button 
                   className='font-avenir flex items-center justify-center border-[1.5px] border-white w-[30%] text-xs py-2 px-4 rounded my-16 hover:bg-white hover:text-black transition-all'
                   onClick={handleButtonClick}
