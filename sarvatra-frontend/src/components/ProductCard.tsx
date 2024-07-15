@@ -28,8 +28,8 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-light py-2 border-b border-[#393939]"/>
-          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-light py-2 border-b border-[#393939]"/>
+          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-medium py-2 border-b border-[#393939]"/>
+          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-medium py-2 border-b border-[#393939]"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <select name="communication" id="mode" className="bg-transparent font-avenir font-light text-start py-2 border-b border-[#393939] text-[#393939]">
@@ -99,12 +99,12 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
           }}
         >
           <div className="flex flex-col justify-between items-center h-full text-white">
-            <div className="mt-[45%] text-center mx-auto w-[90%]">
+            <div className="mt-[45%] text-center mx-auto w-[80%]">
               <h1 className="font-staatliches tracking-widest text-4xl mb-4">{title}</h1>
               <p className="font-avenir mt-8" dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <button 
-              className="text-sm mb-[20%] border-2 font-avenir font-semibold border-white py-2 px-4 rounded-md"
+              className="text-[10px] mb-[20%] tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md"
               onClick={handleButtonClick}
             >
               REQUEST A QUOTE

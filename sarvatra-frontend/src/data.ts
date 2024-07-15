@@ -9,7 +9,7 @@ import mob1 from './assets/mobile1.jpg'
 import mob2 from './assets/mobile4.jpg'
 import mob3 from './assets/mobile2.jpg'
 import mob4 from './assets/mobile3.jpg'
-import mob5 from './assets/mobile7.png'
+import mob5 from './assets/mobile9.jpg'
 import mob6 from './assets/mobile5.jpg'
 import mob7 from './assets/mobile6.jpg'
 
