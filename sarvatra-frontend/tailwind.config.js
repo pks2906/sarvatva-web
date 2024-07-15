@@ -9,6 +9,7 @@ export default {
       fontFamily: {
         gotu: ['Gotu', 'sans-serif'],
         avenir: ['Avenir', 'sans-serif'],
+        staatliches: ["Staatliches", 'sans-serif'],
       },
     },
   },

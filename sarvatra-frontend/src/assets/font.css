@@ -21,3 +21,10 @@
           url('./fonts/avenir-font/AvenirLTStd-Oblique.otf') format('opentype'),
           url('./fonts/avenir-font/AvenirLTStd-Roman.otf') format('opentype');
   }
+
+
+.staatliches-regular {
+     font-family: "Staatliches", sans-serif;
+     font-weight: 400;
+     font-style: normal;
+}
