@@ -1,16 +1,18 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import img from '../assets/mobile1.jpg';
 
 interface ProductProps {
   title: string;
   description: string;
   src: string;
   align: string;
+  mobile: string;
 }
 
 const PopupForm = ({ onClose }: { onClose: () => void }) => {
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-10">
       <motion.div 
         className="bg-white bg-opacity-40 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
         initial={{ opacity: 0, scale: 0.8 }}
@@ -54,8 +56,18 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
   )
 }
 
-const ProductCard = ({ title, description, src, align }: ProductProps) => {
+const ProductCard = ({ title, description, src, align, mobile }: ProductProps) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     if (isFormOpen) {
@@ -75,10 +87,47 @@ const ProductCard = ({ title, description, src, align }: ProductProps) => {
   const handleCloseForm = () => {
     setIsFormOpen(false);
   }
+
+  if (isMobile) {
+    return (
+      <div className='h-[150vh] sticky top-0'>
+        <div 
+          className={`h-[100vh]`}
+          style={{
+            background: `url(${mobile})`,
+            backgroundPosition: 'center',
+            backgroundSize: 'cover'
+          }}
+        >
+          <div className="flex flex-col justify-between items-center h-full text-white">
+            <div className="mt-[45%] text-center mx-auto w-[90%]">
+              <h1 className="font-gotu text-4xl mb-4">{title}</h1>
+              <p className="font-avenir mt-8">{description}</p>
+            </div>
+            <button 
+              className="text-sm mb-[20%] border-2 font-avenir font-semibold border-white py-2 px-4 rounded-md"
+              onClick={handleButtonClick}
+            >
+              REQUEST A QUOTE
+            </button>
+          </div>
+        </div>
+        <AnimatePresence>
+          {isFormOpen && <PopupForm onClose={handleCloseForm} />}
+        </AnimatePresence>
+      </div>
+    );
+  }
+
   return (
     <div className='h-[150vh] sticky top-0'>
-      <div className={`h-[100vh]`}>
-        <img src={src} alt="" className='h-full object-cover z-0'/>
+      <div 
+        className={`h-[100vh]`}
+        style={{
+          background: `url(${src})`,
+          backgroundSize: 'cover'
+        }}
+      >
         <div className={`absolute top-[25%] text-white ${align} w-[40%]`}>
            <div className='flex flex-col mx-auto'>
                 <h1 className='font-bold font-gotu text-4xl md:text-6xl py-4 mb-8'>
@@ -99,6 +148,29 @@ const ProductCard = ({ title, description, src, align }: ProductProps) => {
       <AnimatePresence>
         {isFormOpen && <PopupForm onClose={handleCloseForm} />}
       </AnimatePresence>
+    </div>
+  )
+}
+
+const MobileView = () => {
+  return (
+    <div className='h-[150vh] sticky top-0'>
+      <div 
+        className={`h-[100vh]`}
+        style={{
+          background: `url(${img})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}
+      >
+        <div className="flex flex-col justify-between items-center h-full text-white">
+          <div className="mt-[45%] text-center mx-auto w-[90%]">
+            <h1 className="font-gotu text-4xl mb-4">CONSIOUSNESS</h1>
+            <p className="font-avenir mt-8">The Side Table born from a single log of wood, it symbolises the beginning of manifestation from the supreme consciousness.</p>
+          </div>
+          <button className="text-sm mb-[20%] border-2 font-avenir font-semibold border-white py-2 px-4 rounded-md">REQUEST A QUOTE</button>
+        </div>
+      </div>
     </div>
   )
 }
