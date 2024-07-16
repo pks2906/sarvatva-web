@@ -14,12 +14,12 @@ const CollectionsPage = () => {
     <div>
       <Navbar />
       {/* <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/> */}
+      <AboutCollection />
       <div className="mb-[-50vh]">
         {products.map((product, index) => {
           return <ProductCard key={index} {...product}/>
         })}
       </div>
-      <AboutCollection />
       <Footer />
     </div>
   )
