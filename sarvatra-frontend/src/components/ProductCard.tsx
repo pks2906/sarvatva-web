@@ -18,37 +18,37 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
       >
-        <div className="flex justify-between items-center mb-4 md:mb-8">
-          <h1 className="font-staatliches tracking-widest font-bold text-lg md:text-xl">REQUEST MORE INFORMATION</h1>
+        <div className="flex justify-between items-center mb-0 md:mb-8">
+          <h1 className="font-staatliches text-white tracking-[0.125em] font-bold text-lg md:text-xl">REQUEST MORE INFORMATION</h1>
           <button 
-            className="text-black font-bold text-lg md:text-xl"
+            className="text-white font-medium text-lg md:text-xl"
             onClick={onClose}  
           >
             &times;
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
-          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-white font-avenir font-bold py-2 border-b border-[#393939]"/>
-          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#393939] font-avenir font-medium py-2 border-b border-[#393939]"/>
+          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-white text-white font-avenir font-bold py-2 border-b border-white"/>
+          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-white text-white font-avenir font-bold py-2 border-b border-white"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <select name="communication" id="mode" className="bg-transparent font-avenir font-light text-start py-2 border-b border-[#393939] text-[#393939]">
+          <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-white text-white">
             <option value="none">Mode of Communication</option>
             <option value="email">Email</option>
             <option value="sms">WhatsApp</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-light border-b border-[#393939] placeholder:text-[#393939]"/>
+          <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-light border-b border-[#393939] placeholder:text-[#393939]"/>
+          <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/>
         </div>
         <div className="my-4">
-          <textarea placeholder="Your Message" className="placeholder:text-[#393939] placeholder:font-light border font-avenir bg-transparent w-full border-[#393939] p-2 resize-none" rows={4}></textarea>
+          <textarea placeholder="Your Message" className="placeholder:text-white font-bold border rounded-sm text-white font-avenir bg-transparent w-full border-white p-2 resize-none" rows={4}></textarea>
         </div>
-        <div className="mt-4">
-          <button onClick={onClose} className="w-full md:w-[100px] transition-all rounded-full font-avenir text-center hover:opacity-75 px-4 py-2 bg-black text-white">Submit</button>
+        <div className="md:mt-4">
+          <button onClick={onClose} className="w-full md:w-[100px] transition-all rounded-md font-avenir text-center hover:opacity-75 px-4 py-2 bg-white text-black tracking-wider text-sm">SUBMIT</button>
         </div>
       </motion.div>
     </div>
@@ -104,7 +104,7 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
               <p className="font-avenir mt-8" dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <button 
-              className="text-[10px] mb-[20%] tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md"
+              className="text-[10px] mb-[20%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md"
               onClick={handleButtonClick}
             >
               REQUEST A QUOTE
