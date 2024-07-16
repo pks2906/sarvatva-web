@@ -33,16 +33,18 @@ const Navbar = () => {
 
   return (
     <div className={`font-gotu fixed flex px-4 py-2 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-30 backdrop-blur-sm' : 'backdrop-blur-sm text-white'}`}>
+      <Link to={'/'}>
       <div className='flex items-center space-x-4 font-avenir font-light text-lg'>
         <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={200} />
       </div>
+      </Link>
       <div className='md:hidden flex items-center'>
         <button onClick={toggleMenu} className="flex items-center">
           {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
         </button>
       </div>
       <div className={`hidden md:flex space-x-2 md:gap-x-4 text-sm md:text-md`}>
-        <Link to={'/'}>
+        <Link to={'/collection'}>
           <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Vedic Treasures</p>
         </Link>
         <Link to={'/about'}>
