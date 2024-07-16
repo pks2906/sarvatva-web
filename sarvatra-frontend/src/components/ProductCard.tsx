@@ -134,7 +134,7 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
                 </h1>
                 <p className='w-[60%] text-opacity-80 font-avenir' dangerouslySetInnerHTML={{ __html: description }}></p>
                 <button 
-                  className='font-avenir flex items-center justify-center border-[1.5px] border-white w-[30%] text-xs py-2 px-4 rounded my-16 hover:bg-white hover:text-black transition-all'
+                  className='font-avenir flex items-center justify-center border-[1.5px] border-white w-[30%] text-xs py-2 px-4 rounded my-16 hover:bg-white hover:text-black transition-all tracking-widest'
                   onClick={handleButtonClick}
                 >
                     REQUEST A QUOTE
