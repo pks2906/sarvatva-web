@@ -1,5 +1,4 @@
 import Navbar from "../components/Navbar"
-import AboutTeam from "../components/AboutTeam";
 import Footer from "../components/Footer";
 // import vid from "../assets/landing-vid-ezgif.com-reverse-video.mp4"
 // import HeroParallax from "../components/HeroParallax";
