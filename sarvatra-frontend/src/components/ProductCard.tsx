@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
+import PhoneInput from 'react-phone-input-2';
+import 'react-phone-input-2/lib/style.css';
 
 interface ProductProps {
   title: string;
@@ -8,6 +10,40 @@ interface ProductProps {
   align: string;
   mobile: string;
 }
+
+const PhoneInputField = () => {
+  return (
+    <div className="flex flex-col my-4">
+      <PhoneInput
+        country={'in'}
+        inputStyle={{
+          width: '100%',
+          backgroundColor: 'transparent',
+          color: 'white',
+          borderBottom: '1px solid white',
+          borderTop: 'none',
+          borderLeft: 'none',
+          borderRight: 'none',
+          borderRadius: '0px',
+          fontFamily: 'avenir',
+          fontWeight: 'bold',
+          padding: '0 40px',
+        }}
+        buttonStyle={{
+          backgroundColor: 'transparent',
+          border: 'none',
+        }}
+        dropdownStyle={{
+          backgroundColor: '#131313',
+          color: 'white',
+        }}
+        containerStyle={{
+          width: '100%',
+        }}
+      />
+    </div>
+  );
+};
 
 const PopupForm = ({ onClose }: { onClose: () => void }) => {
   return (
@@ -41,8 +77,9 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
           <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 mb-4">
+          {/* <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/> */}
+          <PhoneInputField />
         </div>
         <div className="my-4">
           <textarea placeholder="Your Message" className="placeholder:text-white font-bold border rounded-sm text-white font-avenir bg-transparent w-full border-white p-2 resize-none" rows={4}></textarea>
