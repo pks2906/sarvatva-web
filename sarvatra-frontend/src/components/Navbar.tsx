@@ -45,13 +45,13 @@ const Navbar = () => {
       </div>
       <div className={`hidden md:flex space-x-2 md:gap-x-4 text-sm md:text-md`}>
         <Link to={'/collection'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Vedic Treasures</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'text-[#CFC9BD] hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Vedic Treasures</p>
         </Link>
         <Link to={'/about'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Crafting Wholeness</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'text-[#CFC9BD] hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Crafting Wholeness</p>
         </Link>
         <Link to={'/contact'}>
-          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Let's Connect</p>
+          <p className={`py-4 md:px-4 text-[18px] rounded transition-all ${scrolled ? 'hover:bg-black hover:bg-opacity-10' : 'text-[#CFC9BD] hover:bg-black hover:bg-opacity-30 hover:text-[#F5DEB3]'}`}>Let's Connect</p>
         </Link>
       </div>
       <AnimatePresence>
