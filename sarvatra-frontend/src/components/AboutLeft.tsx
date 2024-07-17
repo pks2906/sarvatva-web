@@ -15,7 +15,7 @@ const AboutLeft = ({ imgSrc ,title, para1, para2 }: AboutLeftProps) => {
                 <p className='font-avenir font-light text-[16px] md:text-[20px] my-6 md:w-[75%]'>{para2}</p>
             </div>
             <div 
-                className='h-[40vh] w-[90vw] md:h-[600px] md:w-[600px] rounded-lg mx-auto mt-4 mb-6'
+                className='h-[40vh] w-[90vw] md:h-[600px] md:w-[600px] rounded-3xl mx-auto mt-4 mb-6'
                 style={{
                     background: `url(${imgSrc})`,
                     backgroundSize: 'cover',

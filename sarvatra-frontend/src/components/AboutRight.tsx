@@ -11,7 +11,7 @@ const AboutRight = ({ imgSrc, title, para1, para2 }: AboutRightProps) => {
     <div className="h-[105vh] bg-[#131313] flex items-center justify-center my-20">
         <div className="flex flex-col md:flex-row items-center my-8 md:my-20 md:mx-[72px] md:py-8 md:gap-x-6 text-[#EDE6E6]">
             <div 
-                className='h-[40vh] w-[90vw] md:h-[600px] md:w-[600px] rounded-lg mx-auto mt-4 mb-6'
+                className='h-[40vh] w-[90vw] md:h-[600px] md:w-[600px] rounded-3xl mx-auto mt-4 mb-6'
                 style={{
                     background: `url(${imgSrc})`,
                     backgroundSize: 'cover',

@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
-import logo from '../assets/white-logo.svg';
-import darkLogo from '../assets/black-logo.svg';
+import logo from '../assets/navLight.png';
+import darkLogo from '../assets/navDark.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
