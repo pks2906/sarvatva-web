@@ -74,11 +74,13 @@ export const LandingCarousel = () => {
             <h1 className="font-staatliches tracking-widest text-4xl mb-4">VEDIC FURNITURE</h1>
             <p className='font-avenir mt-8'>Every piece is a sculptural artpiece. Each design is an intention, to manifest the cosmic mystery, into tangibility through organic forms and tactile textures, blending art with functionality.</p>
           </div>
-          <button
-            className='text-[10px] mb-[30%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md text-white'
-          >
-            VIEW COLLECTION
-          </button>
+          <Link to={'/collection'}>
+            <button
+              className='text-[10px] mb-[30%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md text-white'
+            >
+              VIEW COLLECTION
+            </button>
+          </Link>
         </div>
         <button
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-1 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
