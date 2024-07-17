@@ -42,18 +42,18 @@ const AboutTeam = () => {
 
   const teamMembers: TeamMember[] = [
     {
-      img: founder1,
-      name: 'Tejaswi Pathak',
-      title: 'Indology Guru',
-      education: 'National Institute of Fashion Technology, India',
-      more: 'When I was 12, I came across an article by Osho titled "You Become What You Think," which enlightened me about ancient Indian Scriptures. One day, I sneaked into my father\'s library and started reading the books on Indian Mythology. Though unsure of how much I understood at the time, it piqued my curiosity to delve deeply into Indian Scriptures. At Sarvatva, I found my calling as I began deciphering ancient wisdom and contributing to the 21st-century’s quest for unwavering truth.',
-    },
-    {
       img: founder3,
       name: 'Iteesha Agrawal',
       title: 'Creative Mystic',
       education: 'National Institute of Fashion Technology, India',
       more: 'When I was 22, I witnessed the unimaginable, being stuck indoors for months under a worldwide lockdown. I began questioning reality, wondering if this was all just a bubble that could burst in the blink of an eye. I embarked on a journey of discovery to seek answers to this profound mystery. It was a painful journey indeed, but I found solace in the deeper understanding of human psychology and how the mind works. The peace that I found, I wanted to share it with the world so that we can evolve together to higher levels of consciousness. With Sarvatva, I found my purpose.',
+    },
+    {
+      img: founder1,
+      name: 'Tejaswi Pathak',
+      title: 'Indology Guru',
+      education: 'National Institute of Fashion Technology, India',
+      more: 'When I was 12, I came across an article by Osho titled "You Become What You Think," which enlightened me about ancient Indian Scriptures. One day, I sneaked into my father\'s library and started reading the books on Indian Mythology. Though unsure of how much I understood at the time, it piqued my curiosity to delve deeply into Indian Scriptures. At Sarvatva, I found my calling as I began deciphering ancient wisdom and contributing to the 21st-century’s quest for unwavering truth.',
     },
     {
       img: founder2,
@@ -65,12 +65,12 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-32 mt-12">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-24 md:mb-12 mt-12">
       <div className='flex flex-col w-full justify-center items-center gap-y-2 mb-4 py-4'>
         <img src={line} alt="line" width={1050}/>
         <img src={decorator} alt="sarvatva logo" width={50}/>
       </div>
-      <h1 className="text-3xl md:text-4xl font-gotu text-center">The Alchemists</h1>
+      <h1 className="text-3xl md:text-4xl font-staatliches text-center">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
@@ -83,11 +83,11 @@ const AboutTeam = () => {
               whileInView={fadeIn}
               viewport={{ once: true }}
             >
-              <div className="overflow-hidden block rounded-full">
+              <div className="overflow-hidden block rounded-3xl">
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="rounded-full h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
+                  className="h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
                 />
               </div>
               <h1 className="font-gotu text-2xl md:text-3xl mt-8 mb-2 text-center">{member.name}</h1>
