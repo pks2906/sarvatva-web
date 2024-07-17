@@ -37,13 +37,13 @@ const Footer = () => {
                 <h1 className="font-staatliches tracking-[0.125em] text-[#ECE6D7] text-xl md:text-2xl mt-10">Follow Us</h1>
                 <div className="grid grid-cols-3 mt-10">
                     <a href="https://pin.it/4FwD7UyAQ" className='cursor-auto'>
-                        <img src={pi} alt="Pinterest" className='h-[50px] hover:opacity-75 transition-opacity cursor-pointer'/>
+                        <img src={pi} alt="Pinterest" className='h-[42px] hover:opacity-75 transition-opacity cursor-pointer'/>
                     </a>
                     <a href="https://www.linkedin.com/company/sarvatva-craftingwholeness/?viewAsMember=true" className='cursor-auto'>
-                        <img src={li} alt="Linkedin" className='h-[50px] hover:opacity-75 transition-opacity cursor-pointer'/>
+                        <img src={li} alt="Linkedin" className='h-[42px] hover:opacity-75 transition-opacity cursor-pointer'/>
                     </a>
                     <a href="https://www.instagram.com/_sarvatva_?igsh=czE2b29nNnE4YnFm&utm_source=qr" className='cursor-auto'>
-                        <img src={ig} alt="Instagram" className='h-[50px] hover:opacity-75 transition-opacity cursor-pointer'/>
+                        <img src={ig} alt="Instagram" className='h-[42px] hover:opacity-75 transition-opacity cursor-pointer'/>
                     </a>
                 </div>
             </div>
