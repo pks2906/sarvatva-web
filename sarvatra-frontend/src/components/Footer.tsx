@@ -1,6 +1,6 @@
-import ig from '../assets/ig-logo.svg';
-import li from '../assets/linkedin.svg';
-import pi from '../assets/pinterest.svg';
+import ig from '../assets/ig2-logo.svg';
+import li from '../assets/linkedin-logo.svg';
+import pi from '../assets/pi2-logo.svg';
 import border from '../assets/footer.png';
 import { Link } from 'react-router-dom';
 
