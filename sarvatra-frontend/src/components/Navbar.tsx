@@ -64,7 +64,7 @@ const Navbar = () => {
             variants={menuVariants}
             transition={{ duration: 0.3 }}
           >
-            <Link to={'/'}>
+            <Link to={'/collection'}>
               <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Treasures</p>
             </Link>
             <Link to={'/about'}>
