@@ -1,6 +1,9 @@
 import img1 from '../assets/carousel1.jpg';
 import img2 from '../assets/carousel2.jpg';
 import img3 from '../assets/carousel3.jpg';
+import mob1 from '../assets/mobile2.jpg';
+import mob2 from '../assets/mobile3.jpg';
+import mob3 from '../assets/mobile4.jpg';
 
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { motion } from "framer-motion";
@@ -8,6 +11,10 @@ import { Link } from 'react-router-dom';
 
 const imgs = [
   img1, img2, img3
+];
+
+const mobileImgs = [
+  mob1, mob2, mob3
 ];
 
 const ONE_SECOND = 1000;
@@ -20,6 +27,16 @@ const SLIDE_TRANSITION = {
 
 export const LandingCarousel = () => {
   const [imgIndex, setImgIndex] = useState(0);
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 768);
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   useEffect(() => {
     const intervalRef = setInterval(() => {
@@ -37,6 +54,55 @@ export const LandingCarousel = () => {
     setImgIndex((pv) => (pv === imgs.length - 1 ? 0 : pv + 1));
   };
 
+  if (isMobile) {
+    return (
+      <div className='relative overflow-hidden h-screen'>
+        <motion.div
+          animate={{
+            translateX: `-${imgIndex * 100}vw`,
+          }}
+          transition={SLIDE_TRANSITION}
+          className='flex'
+          style={{
+            width: `${mobileImgs.length * 100}vw`
+          }}
+        >
+          <Images imgSrc={mobileImgs}/>
+        </motion.div>
+        <div className='absolute top-[5%] w-full h-screen flex flex-col justify-between items-center'>
+          <div className='mt-[45%] text-center text-white text-opacity-80 mx-auto w-[80%]'>
+            <h1 className="font-staatliches tracking-widest text-4xl mb-4">VEDIC FURNITURE</h1>
+            <p className='font-avenir mt-8'>Every piece is a sculptural artpiece. Each design is an intention, to manifest the cosmic mystery, into tangibility through organic forms and tactile textures, blending art with functionality.</p>
+          </div>
+          <button
+            className='text-[10px] mb-[30%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md text-white'
+          >
+            VIEW COLLECTION
+          </button>
+        </div>
+        <button
+        className="absolute top-1/2 left-2 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-1 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
+        onClick={handlePrev}
+      >
+        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7"/>
+        </svg>
+      </button>
+      <button
+        className="absolute top-1/2 right-2 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-1 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
+        onClick={handleNext}
+      >
+        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+        </svg>
+
+      </button>
+
+      <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
+      </div>
+    )
+  }
+
   return (
     <div className="relative overflow-hidden h-screen">
       <motion.div
@@ -47,20 +113,24 @@ export const LandingCarousel = () => {
         className="flex"
         style={{ width: `${imgs.length * 100}vw` }}
       >
-        <Images />
+        <Images imgSrc={imgs}/>
       </motion.div>
       <TextOverlay />
       <button
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white px-4 py-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
         onClick={handlePrev}
       >
-        &#8592;
+        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7"/>
+        </svg>
       </button>
       <button
-        className="absolute top-1/2 right-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-30 text-white px-4 py-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
+        className="absolute top-1/2 right-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
         onClick={handleNext}
       >
-        &#8594;
+        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+          <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
+        </svg>
       </button>
 
       <Dots imgIndex={imgIndex} setImgIndex={setImgIndex} />
@@ -68,14 +138,14 @@ export const LandingCarousel = () => {
   );
 };
 
-const Images = () => {
+const Images = ({ imgSrc }: { imgSrc: string[]}) => {
   return (
     <>
-      {imgs.map((imgSrc, idx) => (
+      {imgSrc.map((img, idx) => (
         <div
           key={idx}
           style={{
-            backgroundImage: `url(${imgSrc})`,
+            backgroundImage: `url(${img})`,
             backgroundSize: "cover",
             backgroundPosition: "center",
             height: "100vh",
