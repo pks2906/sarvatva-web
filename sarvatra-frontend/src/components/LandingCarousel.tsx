@@ -51,7 +51,7 @@ export const LandingCarousel = () => {
       </motion.div>
       <TextOverlay />
       <button
-        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-30 text-white px-4 py-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
+        className="absolute top-1/2 left-4 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white px-4 py-2 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
         onClick={handlePrev}
       >
         &#8592;
