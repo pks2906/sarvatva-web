@@ -1,7 +1,7 @@
 import ig from '../assets/ig2-logo.svg';
 import li from '../assets/linkedin-logo.svg';
 import pi from '../assets/pi2-logo.svg';
-import border from '../assets/footer.png';
+import border from '../assets/footer.svg';
 import { Link } from 'react-router-dom';
 
 const Footer = () => {
@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
         </div>
         <div className='mt-28 flex w-full pb-8'>
-            <div className='bg-repeat-x bg-left w-full h-[54px] opacity-40' style={{
+            <div className='bg-repeat-x bg-left w-full h-[42px] opacity-40' style={{
                 backgroundImage: `url(${border})`,
             }}>
             </div>

@@ -1,6 +1,7 @@
 import img1 from '../assets/mind.jpg'
 import img2 from '../assets/engrave.jpg'
 import img3 from '../assets/identity.jpg'
+import img4 from '../assets/recon.jpg'
 import AboutTeam from "../components/AboutTeam"
 import Footer from "../components/Footer"
 import Navbar from "../components/Navbar"
@@ -23,8 +24,8 @@ const AboutPage = () => {
         <Navbar />
         <AboutHero />
         <AboutLeft imgSrc={img1} title="REDISCOVER" para1={para1} para2={para2}/>
-        <AboutRight imgSrc={img1} title='REIMAGINE' para1={para5} para2={para6}/>
-        <AboutLeft imgSrc={img2} title="RECONNECT" para1={para3} para2={para4}/>
+        <AboutRight imgSrc={img2} title='REIMAGINE' para1={para5} para2={para6}/>
+        <AboutLeft imgSrc={img4} title="RECONNECT" para1={para3} para2={para4}/>
         <AboutRight imgSrc={img3} title='HIGHER PURPOSE' para1={para7} para2={para8}/>
         <AboutTeam />
         <Footer />
