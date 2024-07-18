@@ -9,7 +9,7 @@ interface AboutRightProps {
 const AboutRight = ({ imgSrc, title, para1, para2 }: AboutRightProps) => {
   return (
     <div className="h-screen bg-[#131313] flex-none md:flex">
-        <div className="flex flex-col md:flex-row items-center my-8 md:my-20 md:mr-[72px] md:py-8 md:gap-x-6 text-[#EDE6E6]">
+        <div className="flex flex-col md:flex-row items-center my-8 md:my-20 md:mr-[72px] md:py-8 md:gap-x-6 text-[#EDE6D6]/80">
             <div 
                 className='h-[40vh] w-[100vw] md:h-[100vh] md:w-[60%] mx-auto'
                 style={{
