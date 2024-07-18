@@ -62,9 +62,9 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-24 md:mb-12 mt-12">
+    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:mb-12 md:mt-0 mt-20">
       
-      <h1 className="text-4xl md:text-6xl font-staatliches tracking-[0.125em] text-center mt-4 text-[#131313]">The Alchemists</h1>
+      <h1 className="text-4xl md:text-6xl font-staatliches tracking-[0.125em] text-center text-[#131313]">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
@@ -84,16 +84,16 @@ const AboutTeam = () => {
                   className="h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
                 />
               </div>
-              <h1 className="font-gotu text-2xl md:text-3xl mt-8 mb-2 text-center">{member.name}</h1>
-              <p className="font-avenir text-lg md:text-xl font-light opacity-80 mt-2 mb-2 text-center">{member.title}</p>
-              <p className="font-avenir text-sm text-neutral-400 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
+              <h1 className="font-avenir text-2xl md:text-3xl mt-8 mb-2 text-center">{member.name}</h1>
+              <p className="font-avenir text-lg font-light text-[#131313] opacity-80 mt-2 mb-2 text-center">{member.title}</p>
+              <p className="font-avenir text-lg font-light text-[#131313] opacity-80 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
               <p
-                className="flex items-center justify-center mx-auto font-avenir px-2 text-center hover:text-transition text-lg w-2/3 cursor-pointer"
+                className="text-neutral-400 flex items-center justify-center mx-auto font-avenir px-2 text-center hover:text-transition text-[16px] w-2/3 cursor-pointer"
                 onClick={() => handleCardClick(index)}
               >
                 {selectedCard === index ? 'Read less' : 'Read more'}
-                <svg className={`w-6 h-6 text-black transform transition duration-500 ${selectedCard === index ? 'rotate-180' : 'rotate-0'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 10 4 4 4-4"/>
+                <svg className={`w-6 h-6 text-neutral-400 transform transition duration-500 ${selectedCard === index ? 'rotate-180' : 'rotate-0'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="m8 10 4 4 4-4"/>
                 </svg>
 
               </p>

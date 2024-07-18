@@ -7,12 +7,12 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="relative bottom-0 w-full h-auto pt-28 bg-[#131313]">
-        <div className="flex flex-col md:flex-row justify-between md:mx-[72px] px-10">
+        <div className="flex flex-col w-full md:flex-row justify-between md:mx-[72px] px-10">
             <div className="flex flex-col w-9/10 md:w-1/2">
                 <h1 className="font-staatliches tracking-[0.125em] opacity-80 text-[#EDE6D6] text-xl md:text-2xl">Join our Community</h1>
-                <p className="font-avenir text-[#EDE6D6] opacity-80 mt-10">Subscribe to our mailing list</p>
-                <input type="text" placeholder="Email address" className="bg-transparent opacity-80 placeholder:text-[#EDE6D6]/60 text-[#EDE6D6] font-avenir placeholder:font-light border-b border-[#EDE6D6] py-2 mt-10 w-full md:w-[75%]"/>
-                <button className="flex w-1/2 md:w-[37.5%] px-4 py-2 text-[12px]  md:text-[] opacity-80 bg-white/10 border-[0.5px] border-[#EDE6D6] text-[#EDE6D6] justify-center rounded-md font-medium font-avenir mt-6 hover:bg-[#EDE6D6] hover:text-[#131313] transition tracking-widest ease-in-out">SIGN UP</button>
+                <p className="font-avenir text-[#EDE6D6] opacity-80 mt-4 md:mt-10">Subscribe to our mailing list</p>
+                <input type="text" placeholder="Email address" className="bg-transparent opacity-80 placeholder:text-[#EDE6D6]/60 text-[#EDE6D6] font-avenir placeholder:font-light border-b border-[#EDE6D6] py-2 mt-4 md:mt-10 w-full md:w-[75%]"/>
+                <button className="flex w-1/2 md:w-[37.5%] px-4 py-2 text-[10px] md:text-sm opacity-80 bg-white/10 border-[0.5px] border-[#EDE6D6] text-[#EDE6D6] justify-center rounded-md font-medium font-avenir mt-6 hover:bg-[#EDE6D6] hover:text-[#131313] transition tracking-widest ease-in-out">SIGN UP</button>
             </div>
             <div className="flex flex-col w-9/10 md:w-1/3 mt-12 sm:mt-0">
                 <h1 className="font-staatliches tracking-[0.125em] opacity-80 text-[#EDE6D6] text-xl md:text-2xl">Quick Links</h1>
@@ -33,10 +33,10 @@ const Footer = () => {
             </div>
             <div className="flex flex-col w-9/10 md:w-1/3 mt-12 sm:mt-0">
                 <h1 className="font-staatliches tracking-[0.125em] opacity-80 text-[#EDE6D6] text-xl md:text-2xl">Let's Connect</h1>
-                <p className="mt-10 text-[#ECE6D7] opacity-80 font-avenir">connect@sarvatva.co.in</p>
-                <p className="mt-6 text-[#ECE6D7] opacity-80 font-avenir tracking-wider">+91 - 8106865897</p>
+                <p className="mt-4 md:mt-10 text-[#ECE6D7] opacity-80 font-avenir">connect@sarvatva.co.in</p>
+                <p className="mt-2 md:mt-6 text-[#ECE6D7] opacity-80 font-avenir tracking-wider">+91 - 8106865897</p>
                 <h1 className="font-staatliches tracking-[0.125em] opacity-80 text-[#EDE6D6] text-xl md:text-2xl mt-10">Follow Us</h1>
-                <div className="grid grid-cols-3 w-[60%] mt-10">
+                <div className="grid grid-cols-3 w-[60%] mt-4 md:mt-10">
                     <a href="https://pin.it/4FwD7UyAQ" className='cursor-auto'>
                         <img src={pi} alt="Pinterest" className='h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
                     </a>
