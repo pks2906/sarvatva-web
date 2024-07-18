@@ -1,16 +1,14 @@
 import { Link } from 'react-router-dom'
-import vid from '../assets/square.mp4'
+import vid from '../assets/wholeness.jpg'
 
 const LandingAbout = () => {
   return (
-    <div className="h-screen bg-[#131313] flex my-auto">
-        <div className="flex flex-col md:flex-row md:justify-center md:items-center md:ml-[40px] md:mr-[72px] md:py-8 md:gap-x-16">
-            <video 
+    <div className="h-screen bg-[#131313] py-2">
+        <div className="flex flex-col md:flex-row md:justify-center md:items-center md:ml-[20px] md:mr-[64px] md:py-8 md:gap-x-24">
+            <img 
                 src={vid}
-                autoPlay
-                loop
-                muted
-                className='h-[50vh] md:h-[90vh] md:w-[50vw] object-cover'
+                alt='craft-of-wholeness'
+                className='h-[50vh] md:h-[90vh] md:w-[50vw] object-cover rounded-md'
             />
             <div className='text-[#F5ECD8] text-opacity-80 flex flex-col justify-center w-[80%] mx-auto'>
                 <h1 className='font-staatliches text-4xl md:text-6xl tracking-[0.125em] mb-4 md:mb-[8px]'>THE CRAFT OF WHOLENESS</h1>

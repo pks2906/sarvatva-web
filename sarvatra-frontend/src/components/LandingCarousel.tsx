@@ -1,6 +1,6 @@
 import img1 from '../assets/revised1.jpg';
 import img2 from '../assets/revised2.jpg';
-import img3 from '../assets/revised3.jpg';
+import img3 from '../assets/revised4.jpg';
 import mob1 from '../assets/mobile2.jpg';
 import mob2 from '../assets/mobile3.jpg';
 import mob3 from '../assets/mobile4.jpg';
@@ -72,7 +72,9 @@ export const LandingCarousel = () => {
         <div className='absolute top-1 w-full h-screen flex flex-col justify-between items-center'>
           <div className='mt-[35%] text-center text-[#EDE6D6] text-opacity-80 mx-auto w-[80%]'>
             <h1 className="font-staatliches tracking-widest text-4xl mb-4">VEDIC FURNITURE</h1>
-            <p className='font-avenir mt-8 text-balance'>Every piece is a sculptural artpiece. Each design is an intention, to manifest the cosmic mystery, into tangibility through organic forms and tactile textures, blending art with functionality.</p>
+            <p className='font-avenir mt-8 text-balance'>
+            Each design is an intention, to manifest the cosmic mystery, into tangibility through <b className='font-bold'>sculptural, organic</b> and <b className='font-bold'>tactile</b> forms, harmoniously blending art with functionality.
+            </p>
           </div>
           <Link to={'/collection'}>
             <button
@@ -164,11 +166,10 @@ const TextOverlay = () => {
     return (
       <div className="absolute inset-0 top-[35%] left-[10%] text-[#EDE6D6] flex flex-col">
         <h1 className='font-staatliches text-6xl tracking-[0.125em] md:mb-[8px]'>VEDIC FURNITURE</h1>
-        <p className='font-avenir font-light md:w-[30%] text-[20px] leading-9 my-10'>Every piece is a sculptural artpiece. Each design is an intention, to manifest the cosmic mystery, into tangibility through organic forms and tactile textures, blending art with functionality.</p>
+        <p className='font-avenir font-light md:w-[30%] text-[20px] leading-9 my-10'>
+          Each design is an intention, to manifest the cosmic mystery, into tangibility through <b className='font-bold'>sculptural, organic</b> and <b className='font-bold'>tactile</b> forms, harmoniously blending art with functionality.
+        </p>
         <Link to={'/collection'}>
-            {/* <button className='md:w-[200px] border-[#ede6d6] border-[1.5px] font-light text-sm font-avenir px-4 py-2 rounded-md backdrop-blur-sm md:mt-[28px] hover:bg-white hover:text-black transition-all tracking-widest'>
-                VIEW COLLECTION
-            </button> */}
             <button className='md:w-[200px] font-medium text-sm font-avenir px-4 py-2 rounded-md bg-white/10 border-[0.5px] border-[#ede6d6] md:mt-[28px] hover:bg-[#ede6d6] hover:text-[#131313] shadow-lg transition-all tracking-widest backdrop-blur-sm'>
                 VIEW COLLECTION
             </button>

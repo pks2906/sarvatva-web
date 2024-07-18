@@ -3,8 +3,6 @@ import founder1 from '../assets/founder.jpg';
 import founder2 from '../assets/founder2.png';
 import founder3 from '../assets/founder3.png';
 import { motion } from 'framer-motion';
-import line from '../assets/line.svg';
-import decorator from '../assets/decorator.svg';
 
 type TeamMember = {
   img: string;
@@ -46,31 +44,28 @@ const AboutTeam = () => {
       name: 'Iteesha Agrawal',
       title: 'Creative Mystic',
       education: 'National Institute of Fashion Technology, India',
-      more: 'When I was 22, I witnessed the unimaginable, being stuck indoors for months under a worldwide lockdown. I began questioning reality, wondering if this was all just a bubble that could burst in the blink of an eye. I embarked on a journey of discovery to seek answers to this profound mystery. It was a painful journey indeed, but I found solace in the deeper understanding of human psychology and how the mind works. The peace that I found, I wanted to share it with the world so that we can evolve together to higher levels of consciousness. With Sarvatva, I found my purpose.',
+      more: 'When I was 22, being stuck indoors for months under lockdown, I began questioning reality, wondering if the perceived reality is just a bubble that could burst in the blink of an eye. This period of isolation sparked a curiosity, leading me to embark on a journey of discovery.<br/><br/> I found some answers in the deeper understanding of the branch of philosophy called metaphysics. The revelations resonated deeply with me. I realized that these insights were meant to be shared, and thus Sarvatva was born.',
     },
     {
       img: founder1,
       name: 'Tejaswi Pathak',
       title: 'Indology Guru',
       education: 'National Institute of Fashion Technology, India',
-      more: 'When I was 12, I came across an article by Osho titled "You Become What You Think," which enlightened me about ancient Indian Scriptures. One day, I sneaked into my father\'s library and started reading the books on Indian Mythology. Though unsure of how much I understood at the time, it piqued my curiosity to delve deeply into Indian Scriptures. At Sarvatva, I found my calling as I began deciphering ancient wisdom and contributing to the 21st-century’s quest for unwavering truth.',
+      more: 'When I was 12, I came across an article by Osho titled "You Become What You Think," which enlightened me about ancient Indian Scriptures. One day, I sneaked into my father\'s library and started reading the books on Indian Mythology. Though unsure of how much I understood at the time, it piqued my curiosity to delve deeply into Indian Scriptures.<br/><br/> At Sarvatva, I found my calling as I began deciphering ancient wisdom and contributing to the 21st-century’s quest for unwavering truth.',
     },
     {
       img: founder2,
       name: 'Ishita Srivastava',
       title: 'Design Wizard',
       education: 'Politecnico di Milano, Milan & National Institute of Fashion Technology, India',
-      more: 'When I was 18, I was inspired by works of Marcel Lajos Breuer. I started re-creating models of his iconic armchairs. It sparked a desire to combine functionality with artistic expression, and I\'ve been hooked to furniture design ever since. At Sarvatva, I am fusing Indian Craftsmanship and artistic expression together to create pieces that not only serve a purpose but also add a touch of personality to spaces',
+      more: 'When I was 18, I was inspired by works of Marcel Lajos Breuer. I started re-creating models of his iconic armchairs. It sparked a desire to combine functionality with artistic expression, and I\'ve been hooked to furniture design ever since.<br/><br/> At Sarvatva, I am fusing Indian Craftsmanship and artistic expression together to create pieces that not only serve a purpose but also add a touch of personality to spaces',
     },
   ];
 
   return (
     <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-24 md:mb-12 mt-12">
-      <div className='flex flex-col w-full justify-center items-center gap-y-2 mb-4 py-4'>
-        <img src={line} alt="line" width={1050}/>
-        <img src={decorator} alt="sarvatva logo" width={50}/>
-      </div>
-      <h1 className="text-3xl md:text-4xl font-staatliches text-center">The Alchemists</h1>
+      
+      <h1 className="text-3xl md:text-4xl font-staatliches text-center text-[#131313]">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
@@ -97,7 +92,7 @@ const AboutTeam = () => {
                 className="font-avenir px-2 text-center hover:text- transition text-lg w-2/3 cursor-pointer"
                 onClick={() => handleCardClick(index)}
               >
-                Read more
+                Know more 
               </p>
             </motion.div>
             {selectedCard === index && (
@@ -109,13 +104,12 @@ const AboutTeam = () => {
                 ref={el => (cardRefs.current[index] = el)}
               >
                 <button
-                  className="text-[#ab9f82] text-2xl font-bold self-end"
+                  className="text-[#131313] text-2xl font-medium self-end"
                   onClick={handleCloseCard}
                 >
                   &times;
                 </button>
-                <h1 className="font-gotu text-2xl mb-4">{member.name}</h1>
-                <p className="font-avenir font-light opacity-80 mb-4 text-justify">{member.more}</p>
+                <p className="font-avenir font-light opacity-80 mb-4 text-justify" dangerouslySetInnerHTML={{ __html: member.more}}></p>
               </motion.div>
             )}
           </div>
