@@ -20,7 +20,8 @@ const PhoneInputField = () => {
           width: '100%',
           backgroundColor: 'transparent',
           color: 'white',
-          borderBottom: '1px solid white',
+          borderBottom: '1px solid #EDE6D6',
+          opacity: '80%',
           borderTop: 'none',
           borderLeft: 'none',
           borderRight: 'none',
@@ -34,8 +35,9 @@ const PhoneInputField = () => {
           border: 'none',
         }}
         dropdownStyle={{
-          backgroundColor: '#131313',
-          color: 'white',
+          backgroundColor: '#EDE6D6',
+          color: '#131313',
+          borderRadius: '10px'
         }}
         containerStyle={{
           width: '100%',
@@ -49,43 +51,43 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-10">
       <motion.div 
-        className="bg-white bg-opacity-40 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
+        className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
       >
         <div className="flex justify-between items-center mb-0 md:mb-8">
-          <h1 className="font-staatliches text-white tracking-[0.125em] font-bold text-lg md:text-xl">REQUEST MORE INFORMATION</h1>
+          <h1 className="font-staatliches text-[#EDE6D6]/80 tracking-[0.125em] font-bold text-lg md:text-xl">REQUEST MORE INFORMATION</h1>
           <button 
-            className="text-white font-medium text-lg md:text-xl"
+            className="text-[#EDE6D6]/80 font-medium text-lg md:text-xl"
             onClick={onClose}  
           >
             &times;
           </button>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
-          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-white text-white font-avenir font-bold py-2 border-b border-white"/>
-          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-white text-white font-avenir font-bold py-2 border-b border-white"/>
+          <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80"/>
+          <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-white text-white">
+          <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80">
             <option value="none">Mode of Communication</option>
             <option value="email">Email</option>
             <option value="sms">WhatsApp</option>
           </select>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-          <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/>
+          <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80"/>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 mb-4">
           {/* <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/> */}
           <PhoneInputField />
         </div>
         <div className="my-4">
-          <textarea placeholder="Your Message" className="placeholder:text-white font-bold border rounded-sm text-white font-avenir bg-transparent w-full border-white p-2 resize-none" rows={4}></textarea>
+          <textarea placeholder="Your Message" className="placeholder:text-[#EDE6D6]/80 font-bold border rounded-md text-[#EDE6D6]/80 font-avenir bg-transparent w-full border-[#EDE6D6]/80 p-2 resize-none" rows={4}></textarea>
         </div>
         <div className="md:mt-4">
-          <button onClick={onClose} className="w-full md:w-[100px] transition-all rounded-md font-avenir text-center hover:opacity-75 px-4 py-2 bg-white text-black tracking-wider text-sm">SUBMIT</button>
+          <button onClick={onClose} className="w-full md:w-[100px] transition-all rounded-md font-avenir font-medium text-center hover:opacity-75 px-4 py-2 bg-[#EDE6D6]/80 border-[0.5px] text-[#131313]/80 tracking-wider text-sm">SUBMIT</button>
         </div>
       </motion.div>
     </div>
@@ -136,12 +138,12 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
           }}
         >
           <div className="flex flex-col justify-between items-center h-full text-white">
-            <div className="mt-[45%] text-center mx-auto w-[80%]">
+            <div className="mt-[35%] text-center mx-auto w-[80%]">
               <h1 className="font-staatliches tracking-widest text-4xl mb-4">{title}</h1>
-              <p className="font-avenir mt-8" dangerouslySetInnerHTML={{ __html: description }}></p>
+              <p className="font-avenir mt-8 text-balance" dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <button 
-              className="text-[10px] mb-[20%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md"
+              className="text-[10px] mb-[10%] shadow-lg bg-white/10 backdrop-blur-sm tracking-widest border-[0.5px] font-avenir font-medium border-[#EDE6D6] py-2 px-4 rounded-md"
               onClick={handleButtonClick}
             >
               REQUEST A QUOTE
@@ -164,14 +166,14 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
           backgroundSize: 'cover'
         }}
       >
-        <div className={`absolute top-[25%] text-white ${align} w-[40%]`}>
+        <div className={`absolute top-[25%] text-[#EDE6D6] ${align} w-[40%]`}>
            <div className='flex flex-col mx-auto'>
-                <h1 className='font-bold font-staatliches tracking-[0.125em] text-opacity-80 text-4xl md:text-6xl py-4 mb-8'>
+                <h1 className='font-staatliches tracking-[0.125em] text-opacity-80 text-4xl md:text-6xl'>
                     {title}
                 </h1>
-                <p className='w-[60%] text-opacity-80 font-avenir' dangerouslySetInnerHTML={{ __html: description }}></p>
+                <p className='w-[75%] text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>
                 <button 
-                  className='font-avenir flex items-center justify-center border-[1.5px] border-white w-[30%] text-xs py-2 px-4 rounded my-16 hover:bg-white hover:text-black transition-all tracking-widest'
+                  className='font-avenir flex text-opacity-80 border-opacity-80 font-medium shadow-lg items-center justify-center bg-white/10 backdrop-blur-sm border-[0.5px] border-[#EDE6D6] w-[200px] text-sm py-2 px-4 rounded my-16 hover:bg-[#EDE6D6] hover:text-[#131313] transition-all tracking-widest'
                   onClick={handleButtonClick}
                 >
                     REQUEST A QUOTE

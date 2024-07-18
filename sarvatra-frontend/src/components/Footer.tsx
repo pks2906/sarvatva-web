@@ -20,7 +20,7 @@ const Footer = () => {
                     <Link to={'/about'}>
                         <p className="font-avenir text-[#EDE6D6] opacity-80 mb-6 hover:underline">Crafting Wholeness</p>
                     </Link>
-                    <Link to={'/'}>
+                    <Link to={'/collection'}>
                         <p className="font-avenir text-[#EDE6D6] opacity-80 mb-6 hover:underline">Vedic Furniture</p>
                     </Link>
                     <Link to={'/collection'}>
