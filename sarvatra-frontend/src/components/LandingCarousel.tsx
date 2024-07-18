@@ -10,11 +10,11 @@ import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 
 const imgs = [
-  img1, img2, img3
+  img2, img1, img3
 ];
 
 const mobileImgs = [
-  mob1, mob2, mob3
+  mob2, mob1, mob3
 ];
 
 const ONE_SECOND = 1000;
