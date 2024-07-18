@@ -76,7 +76,7 @@ export const LandingCarousel = () => {
           </div>
           <Link to={'/collection'}>
             <button
-              className='text-[10px] mb-[30%] backdrop-blur-sm tracking-widest border font-avenir font-light border-white py-2 px-4 rounded-md text-white'
+              className='text-[10px] mb-[30%] bg-white/10 shadow-lg backdrop-blur-sm tracking-widest border-[0.5px] font-avenir font-medium border-[#EDE6D6] py-2 px-4 rounded-md text-[#EDE6D6]'
             >
               VIEW COLLECTION
             </button>
@@ -86,7 +86,7 @@ export const LandingCarousel = () => {
         className="absolute top-1/2 left-2 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-1 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
         onClick={handlePrev}
       >
-        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-[#ede6d6]/80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m15 19-7-7 7-7"/>
         </svg>
       </button>
@@ -94,7 +94,7 @@ export const LandingCarousel = () => {
         className="absolute top-1/2 right-2 -translate-y-1/2 bg-white backdrop-blur-sm bg-opacity-10 text-white p-1 rounded-md shadow-lg hover:bg-opacity-20 transition-all"
         onClick={handleNext}
       >
-        <svg className="w-5 h-5 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-[#ede6d6]/80" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
           <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m9 5 7 7-7 7"/>
         </svg>
 
