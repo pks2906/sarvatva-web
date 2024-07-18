@@ -1,6 +1,7 @@
 import Navbar from "../components/Navbar"
 import Footer from "../components/Footer";
 import vid from "../assets/landing-vid-ezgif.com-reverse-video.mp4"
+import poster from "../assets/land-vid-bg.png";
 import HeroParallax from "../components/HeroParallax";
 import {LandingCarousel} from "../components/LandingCarousel";
 import LandingAbout from "../components/LandingAbout";
@@ -11,7 +12,7 @@ const LandingPage = () => {
   return (
     <div>
       <Navbar />
-      <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/>
+      <HeroParallax vidUrl={vid} posterUrl={poster} heading="तद् एकम् | That One" subheading={heroSubhead}/>
       <LandingCarousel />
       <LandingAbout />
       <Footer />

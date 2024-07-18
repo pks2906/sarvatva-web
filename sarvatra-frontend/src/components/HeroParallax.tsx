@@ -3,14 +3,15 @@ import { useScroll, useTransform, motion } from 'framer-motion';
 
 interface HeroProps {
     vidUrl: string;
+    posterUrl: string;
     heading: string;
     subheading: string;
 }
 
-const HeroParallax = ({ vidUrl, heading, subheading }: HeroProps) => {
+const HeroParallax = ({ vidUrl, posterUrl, heading, subheading }: HeroProps) => {
   return (
     <div>
-        <ParallaxContent vidUrl={vidUrl} subheading={subheading} heading={heading} />
+        <ParallaxContent vidUrl={vidUrl} posterUrl={posterUrl} subheading={subheading} heading={heading} />
     </div>
   )
 }
@@ -19,15 +20,16 @@ export default HeroParallax
 
 interface ParallaxContentProps {
     vidUrl: string;
+    posterUrl: string;
     heading: string;
     subheading: string;
 }
 
-const ParallaxContent = ({ vidUrl, subheading, heading }: ParallaxContentProps) => {
+const ParallaxContent = ({ vidUrl, posterUrl, subheading, heading }: ParallaxContentProps) => {
     return (
         <div>
             <div className='relative h-[130vh]'>
-                <StickyImage vidUrl={vidUrl}/>
+                <StickyImage vidUrl={vidUrl} posterUrl={posterUrl}/>
                 <OverlayCopy heading={heading} subheading={subheading}/>
             </div>
         </div>
@@ -36,9 +38,10 @@ const ParallaxContent = ({ vidUrl, subheading, heading }: ParallaxContentProps) 
 
 interface StickyVideoProps {
     vidUrl: string;
+    posterUrl: string;
 }
 
-const StickyImage = ({ vidUrl }: StickyVideoProps) => {
+const StickyImage = ({ vidUrl, posterUrl }: StickyVideoProps) => {
     const targetRef = useRef(null);
     const { scrollYProgress } = useScroll({
         target: targetRef,
@@ -59,6 +62,8 @@ const StickyImage = ({ vidUrl }: StickyVideoProps) => {
                 autoPlay 
                 loop 
                 muted 
+                playsInline
+                poster={posterUrl}
                 className='absolute inset-0 object-cover w-full h-full'
             />
             <motion.div 
