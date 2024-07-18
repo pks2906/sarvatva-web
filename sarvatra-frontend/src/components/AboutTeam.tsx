@@ -1,7 +1,7 @@
 import { useState, useRef } from 'react';
-import founder1 from '../assets/founder.jpg';
-import founder2 from '../assets/founder2.png';
-import founder3 from '../assets/founder3.png';
+import founder1 from '../assets/team2.jpg';
+import founder2 from '../assets/team3.jpg';
+import founder3 from '../assets/team1.jpg';
 import { motion } from 'framer-motion';
 
 type TeamMember = {
@@ -13,7 +13,6 @@ type TeamMember = {
 };
 
 const AboutTeam = () => {
-  // const [ref] = useInView({ threshold: 0.1 });
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
@@ -25,17 +24,17 @@ const AboutTeam = () => {
   };
 
   const handleCardClick = (index: number) => {
-    setSelectedCard(index);
-    setTimeout(() => {
-      cardRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-    }, 200);
-  };
-
-  const handleCloseCard = () => {
-    setSelectedCard(null);
-    setTimeout(() => {
-      containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }, 200);
+    if (selectedCard === index) {
+      setSelectedCard(null);
+      setTimeout(() => {
+        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 200);
+    } else {
+      setSelectedCard(index);
+      setTimeout(() => {
+        cardRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }, 200);
+    }
   };
 
   const teamMembers: TeamMember[] = [
@@ -65,7 +64,7 @@ const AboutTeam = () => {
   return (
     <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:py-8 md:mt-24 md:mb-12 mt-12">
       
-      <h1 className="text-3xl md:text-4xl font-staatliches text-center text-[#131313]">The Alchemists</h1>
+      <h1 className="text-4xl md:text-6xl font-staatliches tracking-[0.125em] text-center mt-4 text-[#131313]">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
@@ -89,10 +88,14 @@ const AboutTeam = () => {
               <p className="font-avenir text-lg md:text-xl font-light opacity-80 mt-2 mb-2 text-center">{member.title}</p>
               <p className="font-avenir text-sm text-neutral-400 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
               <p
-                className="font-avenir px-2 text-center hover:text- transition text-lg w-2/3 cursor-pointer"
+                className="flex items-center justify-center mx-auto font-avenir px-2 text-center hover:text-transition text-lg w-2/3 cursor-pointer"
                 onClick={() => handleCardClick(index)}
               >
-                Know more 
+                {selectedCard === index ? 'Read less' : 'Read more'}
+                <svg className={`w-6 h-6 text-black transform transition duration-500 ${selectedCard === index ? 'rotate-180' : 'rotate-0'}`} aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 10 4 4 4-4"/>
+                </svg>
+
               </p>
             </motion.div>
             {selectedCard === index && (
@@ -103,12 +106,7 @@ const AboutTeam = () => {
                 transition={{ duration: 0.5 }}
                 ref={el => (cardRefs.current[index] = el)}
               >
-                <button
-                  className="text-[#131313] text-2xl font-medium self-end"
-                  onClick={handleCloseCard}
-                >
-                  &times;
-                </button>
+                
                 <p className="font-avenir font-light opacity-80 mb-4 text-justify" dangerouslySetInnerHTML={{ __html: member.more}}></p>
               </motion.div>
             )}
