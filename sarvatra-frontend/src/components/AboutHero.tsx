@@ -26,6 +26,7 @@ const AboutHero = () => {
             className=" top-0 left-0 w-full h-[100vh] sticky object-cover opacity-90"
             src={vid}
             autoPlay
+            playsInline
             loop
             muted
         />
