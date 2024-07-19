@@ -9,7 +9,7 @@ interface AboutLeftProps {
 const AboutLeft = ({ imgSrc ,title, para1, para2, para3 }: AboutLeftProps) => {
   return (
     <div className="h-[100vh]">
-        <div className="flex flex-col-reverse md:flex-row text-[#131313]">
+        <div className="flex flex-col-reverse md:flex-row items-center text-[#131313]">
             <div className='flex justify-center items-center w-[90%] md:w-[50%]'>
                 <div className="flex flex-col w-[90%] md:w-[75%] items-center md:mt-0 px-6">
                     <h1 className='font-staatliches text-4xl md:text-6xl tracking-[0.125em] mt-[20%] md:mt-0 w-[100%] md:w-[75%]'>{title}</h1>
