@@ -84,11 +84,11 @@ const AboutTeam = () => {
                   className="h-80 w-80 object-cover scale-110 hover:scale-100 ease-in duration-300"
                 />
               </div>
-              <h1 className="font-avenir text-2xl md:text-3xl mt-8 mb-2 text-center">{member.name}</h1>
-              <p className="font-avenir text-lg font-light text-[#131313] opacity-80 mt-2 mb-2 text-center">{member.title}</p>
-              <p className="font-avenir text-lg font-light text-[#131313] opacity-80 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
+              <h1 className="font-avenir text-xl font-medium mt-8 mb-2 text-center">{member.name}</h1>
+              <p className="font-avenir text-md font-medium mt-2 mb-2 text-center">{member.title}</p>
+              <p className="font-avenir text-md font-light text-[#131313] opacity-80 w-3/4 md:w-1/2 text-center mb-2">{member.education}</p>
               <p
-                className="text-neutral-400 flex items-center justify-center mx-auto font-avenir px-2 text-center hover:text-transition text-[16px] w-2/3 cursor-pointer"
+                className="text-neutral-400 flex items-center justify-center mx-auto font-avenir px-2 text-center hover:text-transition text-[14px] w-2/3 cursor-pointer"
                 onClick={() => handleCardClick(index)}
               >
                 {selectedCard === index ? 'Read less' : 'Read more'}
