@@ -171,7 +171,7 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
                 <h1 className='font-staatliches tracking-[0.125em] text-opacity-80 text-4xl md:text-6xl'>
                     {title}
                 </h1>
-                <p className='w-[75%] text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>
+                <p className='w-[70%] text-balance text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>
                 <button 
                   className='font-avenir flex text-opacity-80 border-opacity-80 font-medium shadow-lg items-center justify-center bg-white/10 backdrop-blur-sm border-[0.5px] border-[#EDE6D6] w-[200px] text-sm py-2 px-4 rounded my-16 hover:bg-[#EDE6D6] hover:text-[#131313] transition-all tracking-widest'
                   onClick={handleButtonClick}
