@@ -8,7 +8,7 @@ interface AboutRightProps {
 
 const AboutRight = ({ imgSrc, title, para1, para2 }: AboutRightProps) => {
   return (
-    <div className="h-[115vh] md:h-[100vh] bg-[#131313]">
+    <div className="h-[120vh] md:h-[100vh] bg-[#131313]">
         <div className="flex flex-col md:flex-row  items-center text-[#EDE6D6]/80">
             {/* <div 
                 className='h-[45vh] w-[100vw] md:h-[100vh] md:w-[50%]'
@@ -21,7 +21,7 @@ const AboutRight = ({ imgSrc, title, para1, para2 }: AboutRightProps) => {
             <img 
                 src={imgSrc} 
                 alt="image" 
-                className="h-[45vh] w-[100vw] md:h-[100vh] md:w-[50%] object-cover"
+                className="h-[50vh] w-[100vw] md:h-[100vh] md:w-[50%] object-cover"
             />
             <div className='flex h-[70vh] justify-center items-center w-[90%] md:w-[50%]'>
                 <div className="flex flex-col w-[90%] md:w-[75%] items-center md:mt-0 px-6 py-4">
