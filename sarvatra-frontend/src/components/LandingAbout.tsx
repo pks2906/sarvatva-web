@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import vid from '../assets/wholeness.jpg'
+import img from '../assets/wood.jpg'
 
 const LandingAbout = () => {
   return (
@@ -20,7 +20,7 @@ const LandingAbout = () => {
         </div> */}
         <div className="flex flex-col md:flex-row md:justify-center md:items-center md:py-0 md:gap-x-24">
             <img 
-                src={vid}
+                src={img}
                 alt='craft-of-wholeness'
                 className='h-[50vh] md:h-[100vh] md:w-[60vw] object-cover'
             />

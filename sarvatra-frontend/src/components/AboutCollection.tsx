@@ -12,10 +12,10 @@ const AboutCollection = () => {
         <div className='flex flex-col-reverse md:flex-row h-[90%] mx-10 md:mx-[72px]'>
             <div className='flex flex-col text-center md:text-start justify-center py-4 md:mt-14'>
                 <p className='font-avenir  md:text-xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#CFC9BD]'>
-                    Our Collection, <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
+                    <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                 </p>
                 <p className='font-avenir text-balance md:text-xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#CFC9BD]'>
-                    It ponders upon the mystery of what existed before creation of Universe and how the creation came about. 
+                Our Collection ponders upon the mystery of what existed before creation of Universe and how the creation came about. 
                 </p>
             </div>
             <img src={img} alt="" className='h-3/5 md:h-full md:w-[50vw]'/>
