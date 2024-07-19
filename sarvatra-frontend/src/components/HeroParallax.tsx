@@ -124,7 +124,7 @@ const OverlayCopy = ({ heading, subheading }: OverlayCopyProps) => {
                 {heading}
             </motion.p>
             <motion.p 
-                className={`font-avenir text-justify font-light mx-10 md:text-center md:w-[60%] md:text-xl opacity-0 flex flex-col transition-all duration-1000 ${scrolled ? 'translate-y-[-5vh] opacity-100' : ''}`}
+                className={`font-avenir text-justify font-light mx-10 md:text-balance md:w-[60%] md:text-xl opacity-0 flex flex-col transition-all duration-1000 ${scrolled ? 'translate-y-[-5vh] opacity-100' : ''}`}
             >
                 {subheading}
             </motion.p>

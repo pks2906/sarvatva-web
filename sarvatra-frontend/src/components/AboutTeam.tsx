@@ -107,7 +107,7 @@ const AboutTeam = () => {
                 ref={el => (cardRefs.current[index] = el)}
               >
                 
-                <p className="font-avenir font-light opacity-80 mb-4 text-justify" dangerouslySetInnerHTML={{ __html: member.more}}></p>
+                <p className="font-avenir font-light opacity-80 mb-4 text-balance" dangerouslySetInnerHTML={{ __html: member.more}}></p>
               </motion.div>
             )}
           </div>
