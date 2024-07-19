@@ -11,7 +11,7 @@ import AboutCollection from "../components/AboutCollection.tsx";
 
 const CollectionsPage = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       {/* <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/> */}
       <AboutCollection />

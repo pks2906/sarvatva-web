@@ -20,7 +20,7 @@ const ContactPage = () => {
   }, [selectedOption]);
 
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <img src={banner} alt="" className="w-full h-[30vh] md:h-auto object-cover" />
       <div className="flex flex-col items-center mt-20 md:mt-44 px-4 md:px-0">

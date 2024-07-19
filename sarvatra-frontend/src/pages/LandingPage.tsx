@@ -9,7 +9,7 @@ const heroSubhead = "Going 13.8 Billion years back in time, when all creation or
 
 const LandingPage = () => {
   return (
-    <div>
+    <div className="overflow-x-hidden">
       <Navbar />
       <HeroParallax vidUrl={vid} heading="तद् एकम् | That One" subheading={heroSubhead}/>
       <LandingCarousel />

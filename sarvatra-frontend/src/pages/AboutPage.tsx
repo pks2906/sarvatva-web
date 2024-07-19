@@ -22,7 +22,7 @@ const para8 = "Sarvatva foresees an opportunity that lies in the fusion of craft
 
 const AboutPage = () => {
   return (
-    <div>
+    <div className='overflow-x-hidden'>
         <Navbar />
         <AboutHero />
         <AboutLeft imgSrc={img1} title="REDISCOVER" para1={para1} para2={para2} para3={para21}/>
