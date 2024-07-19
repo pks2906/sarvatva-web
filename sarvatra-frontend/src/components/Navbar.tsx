@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/navLight.png';
-import darkLogo from '../assets/navDark.png';
+import darkLogo from '../assets/logoDark.png';
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -35,7 +35,7 @@ const Navbar = () => {
     <div className={`font-staatliches tracking-[0.125em] fixed flex px-4 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'text-black bg-white bg-opacity-10 backdrop-blur-sm shadow-md' : 'backdrop-blur-sm text-white'}`}>
       <Link to={'/'}>
       <div className='flex items-center space-x-4 font-avenir font-light text-lg'>
-        <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={240} />
+        <img src={scrolled ? darkLogo : logo} alt="sarvatva" width={240}/>
       </div>
       </Link>
       <div className='md:hidden flex items-center'>
