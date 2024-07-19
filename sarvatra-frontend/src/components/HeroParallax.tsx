@@ -60,7 +60,6 @@ const StickyImage = ({ vidUrl }: StickyVideoProps) => {
                 loop 
                 muted
                 playsInline
-                controls={false}
                 className='absolute inset-0 object-cover w-full h-full'
             />
             <motion.div 
