@@ -22,7 +22,7 @@ const AboutHero = () => {
         visible: (i: number) => ({
             opacity: 1,
             transition: {
-                delay: i * 0.04,
+                delay: i * 0.1,
             }
         })
     };
@@ -33,7 +33,7 @@ const AboutHero = () => {
             opacity: 1,
             transition: {
                 duration: 2,
-                delay: 4
+                delay: 7.5
             }
         }
     };
