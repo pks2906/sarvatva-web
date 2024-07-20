@@ -23,12 +23,12 @@ const AboutCollection = () => {
 
     if (isMobile) {
         return(
-            <div className='h-[100vh] bg-[#131313] flex items-center justify-center mx-auto'>
-                <div className='flex flex-col'>
-                    <div className='flex h-[50vh] w-full'>
+            <div className='h-[100vh] bg-[#131313] flex justify-center mx-auto'>
+                <div className='relative flex flex-col items-center'>
+                    <div className='flex h-[40vh] w-[90%] mt-20'>
                         <MobileShlok />
                     </div>
-                    <div className='flex flex-col mx-auto w-[80%] gap-y-[28px] text-center'>
+                    <div className='flex flex-col justify-center h-[40vh] mx-auto w-[80%] gap-y-[28px] text-center'>
                         <p className='font-avenir text-balance leading-[1.5rem] text-[#EDE6D6]'>
                             <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                         </p>
@@ -37,11 +37,11 @@ const AboutCollection = () => {
                         </p>
                     </div>
                 </div>
-                <div onClick={scrollToNext} className='absolute bottom-0 flex flex-col left-[45%] md:left-[50%] mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'>
-                    <svg className="w-10 h-10 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <div onClick={scrollToNext} className='absolute bottom-0 flex flex-col items-center w-full mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'>
+                    <svg className="w-8 h-8 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7"/>
                     </svg>
-                    <svg className="w-10 h-10 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                    <svg className="w-8 h-8 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                         <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7"/>
                     </svg>
                 </div>

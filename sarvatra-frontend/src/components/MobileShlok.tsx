@@ -29,22 +29,24 @@ const fadeIn: Variants = {
 
 const MobileShlok: React.FC = () => {
   return (
-    <div className="flex h-[350px] w-[350px] mx-auto">
-      <div className="flex gap-x-2">
+    <div className="flex h-[80%] w-[100%] justify-center">
+      <div className="flex">
         <motion.img
           src={left}
           alt="left border"
-          width={55}
+          width={45}
+          className='h-[100%]'
           custom={0}
           initial="hidden"
           animate="visible"
           variants={fadeIn}
         />
-        <div className="flex flex-col items-center justify-center gap-y-2">
+        <div className="flex flex-col items-center justify-center gap-y-[0.1rem]">
           <motion.img
             src={text1}
             alt="text 1"
-            width={230}
+            // width={263}
+            className='w-[85%] h-[10%]'
             custom={1}
             initial="hidden"
             animate="visible"
@@ -53,7 +55,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text2}
             alt="text 2"
-            width={210}
+            className='w-[85%] h-[10%]'
             custom={2}
             initial="hidden"
             animate="visible"
@@ -62,18 +64,18 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text3}
             alt="text 3"
-            width={215}
+            className='w-[85%] h-[10%]'
             custom={3}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
           />
-          <div className="flex gap-x-2">
-            <div className="flex flex-col gap-y-3">
+          <div className="flex justify-around h-[20%] w-[85%] my-[0.1rem]">
+            <div className="flex flex-col gap-y-[0.1rem]">
               <motion.img
                 src={text41}
                 alt=""
-                width={43}
+                className='h-[45%]'
                 custom={4}
                 initial="hidden"
                 animate="visible"
@@ -82,7 +84,7 @@ const MobileShlok: React.FC = () => {
               <motion.img
                 src={text51}
                 alt=""
-                width={65}
+                className='h-[45%]'
                 custom={6}
                 initial="hidden"
                 animate="visible"
@@ -92,17 +94,17 @@ const MobileShlok: React.FC = () => {
             <motion.img
               src={dot}
               alt="dot"
-              width={58}
+              className='h-[90%] my-[0.1rem]'
               custom={5}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
             />
-            <div className="flex flex-col items-end gap-y-3">
+            <div className="flex flex-col items-end gap-y-[0.2rem]">
               <motion.img
                 src={text42}
                 alt=""
-                width={72}
+                className='h-[40%]'
                 custom={4}
                 initial="hidden"
                 animate="visible"
@@ -111,7 +113,7 @@ const MobileShlok: React.FC = () => {
               <motion.img
                 src={text52}
                 alt=""
-                width={38}
+                className='h-[40%]'
                 custom={6}
                 initial="hidden"
                 animate="visible"
@@ -122,7 +124,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text6}
             alt="text6"
-            width={210}
+            className='w-[85%] h-[9%]'
             custom={7}
             initial="hidden"
             animate="visible"
@@ -131,7 +133,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text7}
             alt="text7"
-            width={242}
+            className='w-[85%] h-[10%]'
             custom={8}
             initial="hidden"
             animate="visible"
@@ -140,7 +142,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text8}
             alt="text8"
-            width={242}
+            className='w-[85%] h-[10%]'
             custom={9}
             initial="hidden"
             animate="visible"
@@ -149,7 +151,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text9}
             alt="text9"
-            width={210}
+            className='w-[85%] h-[10%]'
             custom={10}
             initial="hidden"
             animate="visible"
@@ -158,7 +160,7 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text10}
             alt="text 10"
-            width={160}
+            className='w-[85%] h-[10%]'
             custom={11}
             initial="hidden"
             animate="visible"
@@ -168,8 +170,9 @@ const MobileShlok: React.FC = () => {
         <motion.img
           src={right}
           alt="right border"
-          width={55}
-          custom={1}
+          width={45}
+          className='h-[100%]'
+          custom={12}
           initial="hidden"
           animate="visible"
           variants={fadeIn}
