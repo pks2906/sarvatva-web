@@ -26,22 +26,23 @@ const fadeIn: Variants = {
 
 const DesktopShlok: React.FC = () => {
   return (
-    <div className="md:h-[500px] md:w-[700px]">
+    <div className="flex h-full w-full justify-center">
       <div className="flex gap-x-8">
         <motion.img
           src={left}
           alt="left shlok border"
+          className='h-[100%]'
           custom={0}
           initial="hidden"
           animate="visible"
           variants={fadeIn}
         />
-        <div className="flex flex-col items-center justify-center gap-y-3">
+        <div className="flex flex-col items-center justify-center w-[100%] gap-y-3">
           <motion.img
             src={text1}
             alt="shlok 1"
-            height={33}
-            custom={2}
+            className='w-[100%] h-[10%]'
+            custom={1}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -49,19 +50,19 @@ const DesktopShlok: React.FC = () => {
           <motion.img
             src={text2}
             alt="shlok 1"
-            height={33}
-            custom={3}
+            className='w-[100%] h-[10%]'
+            custom={2}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
           />
-          <div className="flex gap-x-4">
+          <div className="flex w-[100%] items-center justify-evenly">
             <div className="flex flex-col gap-y-3">
               <motion.img
                 src={text31}
                 alt="shlok 3-1"
-                height={33}
-                custom={4}
+                className='w-[100%]'
+                custom={3}
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -69,8 +70,8 @@ const DesktopShlok: React.FC = () => {
               <motion.img
                 src={text41}
                 alt="shlok 4-1"
-                height={33}
-                custom={6}
+                className='w-[100%]'
+                custom={5}
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -79,8 +80,7 @@ const DesktopShlok: React.FC = () => {
             <motion.img
               src={dot}
               alt="dot"
-              height={73}
-              custom={5}
+              custom={4}
               initial="hidden"
               animate="visible"
               variants={fadeIn}
@@ -89,8 +89,8 @@ const DesktopShlok: React.FC = () => {
               <motion.img
                 src={text32}
                 alt="shlok 3-2"
-                height={33}
-                custom={4}
+                className='w-[100%]'
+                custom={3}
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -98,8 +98,8 @@ const DesktopShlok: React.FC = () => {
               <motion.img
                 src={text42}
                 alt="shlok 4-2"
-                height={33}
-                custom={6}
+                className='w-[100%]'
+                custom={5}
                 initial="hidden"
                 animate="visible"
                 variants={fadeIn}
@@ -109,8 +109,8 @@ const DesktopShlok: React.FC = () => {
           <motion.img
             src={text5}
             alt="shlok 5"
-            height={33}
-            custom={7}
+            className='w-[100%] h-[10%]'
+            custom={6}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -118,8 +118,8 @@ const DesktopShlok: React.FC = () => {
           <motion.img
             src={text6}
             alt="shlok 6"
-            height={33}
-            custom={8}
+            className='w-[100%] h-[10%]'
+            custom={7}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -127,8 +127,8 @@ const DesktopShlok: React.FC = () => {
           <motion.img
             src={text7}
             alt="shlok 7"
-            height={33}
-            custom={9}
+            className='w-[100%] h-[10%]'
+            custom={8}
             initial="hidden"
             animate="visible"
             variants={fadeIn}
@@ -137,7 +137,8 @@ const DesktopShlok: React.FC = () => {
         <motion.img
           src={right}
           alt="right shlok border"
-          custom={1}
+          className='h-[100%]'
+          custom={9}
           initial="hidden"
           animate="visible"
           variants={fadeIn}

@@ -45,7 +45,6 @@ const MobileShlok: React.FC = () => {
           <motion.img
             src={text1}
             alt="text 1"
-            // width={263}
             className='w-[85%] h-[10%]'
             custom={1}
             initial="hidden"
@@ -70,7 +69,7 @@ const MobileShlok: React.FC = () => {
             animate="visible"
             variants={fadeIn}
           />
-          <div className="flex justify-around h-[20%] w-[85%] my-[0.1rem]">
+          <div className="flex justify-evenly h-[20%] w-[85%] my-[0.1rem]">
             <div className="flex flex-col gap-y-[0.1rem]">
               <motion.img
                 src={text41}
@@ -100,7 +99,7 @@ const MobileShlok: React.FC = () => {
               animate="visible"
               variants={fadeIn}
             />
-            <div className="flex flex-col items-end gap-y-[0.2rem]">
+            <div className="flex flex-col items-center gap-y-[0.2rem]">
               <motion.img
                 src={text42}
                 alt=""

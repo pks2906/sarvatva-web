@@ -49,9 +49,9 @@ const AboutCollection = () => {
         )
     }
   return (
-    <div className='h-[100vh] bg-[#131313] flex items-center justify-center'>
-        <div className='flex flex-col-reverse md:flex-row md:mx-[72px]'>
-            <div className='flex flex-col text-center md:text-start justify-center md:w-[40%] mx-auto'>
+    <div className='h-screen w-screen bg-[#131313] flex items-center justify-center'>
+        <div className='flex mx-auto'>
+            <div className='flex flex-col items-center text-start justify-center w-[40%] mx-auto'>
                 <p className='font-avenir md:text-xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#CFC9BD]'>
                     <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                 </p>
@@ -59,11 +59,11 @@ const AboutCollection = () => {
                 Our Collection ponders upon the mystery of what existed before creation of Universe and how the creation came about. 
                 </p>
             </div>
-            <div className='md:w-[50%]'>
+            <div className='w-[60%]'>
                 <DesktopShlok />
             </div>
         </div>
-        <div onClick={scrollToNext} className='absolute bottom-3 flex flex-col left-[45%] md:left-[50%] mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'>
+        <div onClick={scrollToNext} className='absolute bottom-3 flex flex-col items-center w-full mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'>
             <svg className="w-10 h-10 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7"/>
             </svg>
