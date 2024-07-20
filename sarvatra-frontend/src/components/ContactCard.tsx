@@ -2,7 +2,7 @@ import banner from "../assets/cu.png";
 
 const ContactCard = () => {
   return (
-    <div className="h-[140vh] md:h-[130vh]">
+    <div className="h-[140vh] md:h-[130vh] bg-white">
         <img src={banner} alt="" className="w-full h-[30vh] object-cover" />
         <div className="flex h-[110vh] md:h-[100vh] flex-col justify-center items-center">
             <div className="flex flex-col text-center mb-2">
