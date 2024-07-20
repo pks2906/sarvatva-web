@@ -56,10 +56,10 @@ const AboutCollection = () => {
                     <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                 </p>
                 <p className='font-cormorant text-balance md:text-2xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'>
-                Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
+                    Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
                 </p>
             </div>
-            <div className='w-[60%]'>
+            <div className='w-[60%] min-w-[500px] flex items-center justify-center'>
                 <DesktopShlok />
             </div>
         </div>
