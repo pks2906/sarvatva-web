@@ -62,7 +62,7 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={containerRef} className="min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:mb-12 md:mt-0 mt-20">
+    <div ref={containerRef} className="bg-white min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:mb-12 md:pt-0 pt-20">
       
       <h1 className="text-4xl md:text-6xl font-cormorant text-center text-[#131313]">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
