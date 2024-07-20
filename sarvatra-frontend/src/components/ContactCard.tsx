@@ -1,4 +1,4 @@
-import banner from "../assets/contact-banner.png";
+import banner from "../assets/cu.png";
 
 const ContactCard = () => {
   return (

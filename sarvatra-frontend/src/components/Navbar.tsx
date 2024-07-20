@@ -27,8 +27,8 @@ const Navbar = () => {
   }, []);
 
   const menuVariants = {
-    hidden: { opacity: 0},
-    visible: { opacity: 1}
+    hidden: { opacity: 0, height: 0},
+    visible: { opacity: 1, height: 'auto'}
   };
 
   return (
@@ -57,7 +57,7 @@ const Navbar = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className={`md:hidden absolute top-[110%] right-2 transition ${scrolled ? 'bg-white' : 'bg-white/80 backdrop-blur-sm'} shadow-lg border-[0.5px] rounded-md flex flex-col items-start px-6`}
+            className={`md:hidden absolute top-[110%] w-[95%] left-0 right-0 mx-auto py-2 transition ${scrolled ? 'bg-white' : 'bg-white/80 backdrop-blur-sm'} shadow-lg border-[0.5px] rounded-md flex flex-col items-start px-6`}
             initial="hidden"
             animate="visible"
             exit="hidden"
