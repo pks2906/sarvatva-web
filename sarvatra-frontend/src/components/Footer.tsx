@@ -50,7 +50,7 @@ const Footer = () => {
             </div>
         </div>
         <div className='mt-28 flex w-full pb-8'>
-            <div className='bg-repeat-x bg-left w-full h-[41px] opacity-80' style={{
+            <div className='bg-repeat-x bg-left w-full h-[41px] opacity-30' style={{
                 backgroundImage: `url(${border})`,
             }}>
             </div>

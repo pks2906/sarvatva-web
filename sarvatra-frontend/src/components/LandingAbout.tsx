@@ -4,7 +4,7 @@ import img from '../assets/wood.jpg'
 const LandingAbout = () => {
   return (
     <div className="h-[100vh]">
-        <div className="flex flex-col md:flex-row md:justify-center md:items-center md:py-0 md:space-x-12">
+        <div className="flex flex-col-reverse md:flex-row md:justify-center md:items-center md:py-0 md:space-x-12">
             <img 
                 src={img}
                 alt='craft-of-wholeness'
