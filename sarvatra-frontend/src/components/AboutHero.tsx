@@ -15,7 +15,7 @@ const AboutHero = () => {
         return () => window.removeEventListener("resize", handleResize);
       }, []);
     
-      const typewriterText = "\"Wholeness is a craft, nurtured and revealed through the flow of everyday living.\"";
+      const typewriterText = "“Wholeness is a craft, nurtured and revealed through the flow of everyday living.”";
     
     const typewriterVariants = {
         hidden: { opacity: 0 },
@@ -44,7 +44,7 @@ const AboutHero = () => {
         <div className='h-full flex justify-center items-center'>
             <div className='relative flex flex-col items-center justify-between text-center'>
                 <motion.h1 
-                    className='text-[#EDE6D6]/80 text-4xl md:text-6xl font-staatliches leading-[4.25rem] md:leading-[7rem] tracking-[0.125em] text-balance px-2 md:px-0 w-[95%] md:w-[65%]'
+                    className='text-[#EDE6D6]/80 text-4xl md:text-6xl italic font-cormorant leading-[4.25rem] md:leading-[7rem] text-balance px-2 md:px-0 w-[95%] md:w-[80%]'
                     initial="hidden"
                     animate="visible"
                     variants={typewriterVariants}

@@ -57,7 +57,7 @@ const PopupForm = ({ onClose }: { onClose: () => void }) => {
         exit={{ opacity: 0, scale: 0.8 }}
       >
         <div className="flex justify-between items-center mb-0 md:mb-8">
-          <h1 className="font-staatliches text-[#EDE6D6]/80 tracking-[0.125em] font-bold text-lg md:text-xl">REQUEST MORE INFORMATION</h1>
+          <h1 className="font-cormorant text-[#EDE6D6]/80 font-bold text-lg md:text-xl">Request More Information</h1>
           <button 
             className="text-[#EDE6D6]/80 font-medium text-lg md:text-xl"
             onClick={onClose}  
@@ -139,7 +139,7 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
         >
           <div className="flex flex-col justify-between items-center h-full text-white">
             <div className="mt-[35%] text-center mx-auto w-[80%]">
-              <h1 className="font-staatliches tracking-widest text-4xl mb-4">{title}</h1>
+              <h1 className="font-cormorant text-4xl mb-4">{title}</h1>
               <p className="font-avenir mt-8 text-balance" dangerouslySetInnerHTML={{ __html: description }}></p>
             </div>
             <button 
@@ -168,7 +168,7 @@ const ProductCard = ({ title, description, src, align, mobile }: ProductProps) =
       >
         <div className={`absolute top-[25%] text-[#EDE6D6] ${align} w-[40%]`}>
            <div className='flex flex-col mx-auto'>
-                <h1 className='font-staatliches tracking-[0.125em] text-opacity-80 text-4xl md:text-6xl'>
+                <h1 className='font-cormorant text-opacity-80 text-4xl md:text-6xl'>
                     {title}
                 </h1>
                 <p className='w-[70%] text-balance text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>

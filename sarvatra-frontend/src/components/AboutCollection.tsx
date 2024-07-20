@@ -29,11 +29,11 @@ const AboutCollection = () => {
                         <MobileShlok />
                     </div>
                     <div className='flex flex-col justify-center h-[40vh] mx-auto w-[80%] gap-y-[28px] text-center'>
-                        <p className='font-avenir text-balance leading-[1.5rem] text-[#EDE6D6]'>
+                        <p className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'>
                             <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                         </p>
-                        <p className='font-avenir text-balance leading-[1.5rem] text-[#EDE6D6]'>
-                        Our Collection ponders upon the mystery of what existed before creation of Universe and how the creation came about. 
+                        <p className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'>
+                        Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
                         </p>
                     </div>
                 </div>
@@ -52,11 +52,11 @@ const AboutCollection = () => {
     <div className='h-screen w-screen bg-[#131313] flex items-center justify-center'>
         <div className='flex mx-auto'>
             <div className='flex flex-col items-center text-start justify-center w-[40%] mx-auto'>
-                <p className='font-avenir md:text-xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#CFC9BD]'>
+                <p className='font-cormorant md:text-2xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#EDE6D6]'>
                     <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                 </p>
-                <p className='font-avenir text-balance md:text-xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#CFC9BD]'>
-                Our Collection ponders upon the mystery of what existed before creation of Universe and how the creation came about. 
+                <p className='font-cormorant text-balance md:text-2xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'>
+                Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
                 </p>
             </div>
             <div className='w-[60%]'>

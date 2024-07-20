@@ -6,7 +6,7 @@ const ContactCard = () => {
         <img src={banner} alt="" className="w-full h-[30vh] object-cover" />
         <div className="flex h-[110vh] md:h-[100vh] flex-col justify-center items-center">
             <div className="flex flex-col text-center mb-2">
-                <h1 className="font-staatliches tracking-[0.125em] text-[#131313] text-3xl md:text-4xl">Let's Connect</h1>
+                <h1 className="font-cormorant text-[#131313] text-3xl md:text-4xl">Let's Connect</h1>
                 <p className="font-avenir font-light text-lg md:text-xl text-[#131313]/50">Over a cup of Tea...</p>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 my-2 md:my-8 gap-x-4 md:gap-x-24 gap-y-2 md:gap-y-10 w-[90%]">

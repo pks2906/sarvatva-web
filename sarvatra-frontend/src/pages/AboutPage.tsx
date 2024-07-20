@@ -9,7 +9,7 @@ import AboutHero from "../components/AboutHero"
 import AboutLeft from "../components/AboutLeft"
 import AboutRight from '../components/AboutRight'
 
-const para1 = "We believe that wholeness is not found in the external universe but is a natural instinct of inner universe."
+const para1 = "We believe that wholeness is not found in the external Cosmos but is a natural instinct of inner Cosmos."
 const para2 = "Wholeness is a craft waiting to be nurtured and revealed in the flow of everyday living."
 const para21 = 'Let Sarvatva guide you on this journey of inner rediscovery, one creation at a time.'
 const para3 = "The Vedas are considered to be the oldest surviving spiritual texts on Earth, compiled almost 3000 years ago."
@@ -25,10 +25,10 @@ const AboutPage = () => {
     <div className='overflow-x-hidden'>
         <Navbar />
         <AboutHero />
-        <AboutLeft imgSrc={img1} title="REDISCOVER" para1={para1} para2={para2} para3={para21}/>
-        <AboutRight imgSrc={img2} title='REIMAGINE' para1={para5} para2={para6}/>
-        <AboutLeft imgSrc={img3} title="RECONNECT" para1={para3} para2={para4} para3={para41}/>
-        <AboutRight imgSrc={img4} title='HIGHER PURPOSE' para1={para7} para2={para8}/>
+        <AboutLeft imgSrc={img1} title="Rediscover" para1={para1} para2={para2} para3={para21}/>
+        <AboutRight imgSrc={img2} title='Reimagine' para1={para5} para2={para6}/>
+        <AboutLeft imgSrc={img3} title="Reconnect" para1={para3} para2={para4} para3={para41}/>
+        <AboutRight imgSrc={img4} title='Higher Purpose' para1={para7} para2={para8}/>
         <AboutTeam />
         <Footer />
     </div>

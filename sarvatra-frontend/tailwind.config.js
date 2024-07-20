@@ -10,6 +10,7 @@ export default {
         gotu: ['Gotu', 'sans-serif'],
         avenir: ['Avenir', 'sans-serif'],
         staatliches: ["Staatliches", 'sans-serif'],
+        cormorant: ["Cormorant Garamond", 'serif'],
       },
     },
   },
