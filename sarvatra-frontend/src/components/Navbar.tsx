@@ -65,7 +65,7 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
           >
             <Link to={'/collection'}>
-              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Treasures</p>
+              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Furniture</p>
             </Link>
             <Link to={'/about'}>
               <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>The Craft of Wholeness</p>

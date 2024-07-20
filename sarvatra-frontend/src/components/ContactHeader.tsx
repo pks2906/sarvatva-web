@@ -26,8 +26,8 @@ const ContactHeader = () => {
   }, []);
 
   const menuVariants = {
-    hidden: { opacity: 0},
-    visible: { opacity: 1}
+    hidden: { opacity: 0, height: 0},
+    visible: { opacity: 1, height: 'auto'}
   };
 
   return (
@@ -56,7 +56,7 @@ const ContactHeader = () => {
       <AnimatePresence>
         {menuOpen && (
           <motion.div
-            className={`md:hidden absolute top-[110%] right-2 transition bg-white/90 backdrop-blur shadow-lg border-[0.5px] rounded-md flex flex-col items-start px-6`}
+            className={`md:hidden absolute text-balance top-[110%] w-[95%] left-0 right-0 mx-auto py-2 transition bg-white/90 backdrop-blur shadow-xl border-[0.5px] rounded-md flex flex-col items-start px-6`}
             initial="hidden"
             animate="visible"
             exit="hidden"
