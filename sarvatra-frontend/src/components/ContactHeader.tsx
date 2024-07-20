@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { FaBars, FaTimes } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import darkLogo from '../assets/logoDark.png';
 
@@ -39,7 +38,15 @@ const ContactHeader = () => {
       </Link>
       <div className={`md:hidden flex items-center text-[#131313]`}>
         <button onClick={toggleMenu} className="flex items-center">
-          {menuOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+          {menuOpen ? (
+            <svg className="w-6 h-6 text-[#131313]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m16 14-4-4-4 4"/>
+            </svg>
+          ) : (
+            <svg className="w-6 h-6 text-[#131313]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 10 4 4 4-4"/>
+            </svg>
+          )}
         </button>
       </div>
       <div className={`hidden md:flex space-x-2 md:gap-x-4 text-sm md:text-md`}>
@@ -63,14 +70,14 @@ const ContactHeader = () => {
             variants={menuVariants}
             transition={{ duration: 0.3 }}
           >
-            <Link to={'/collection'}>
-              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Treasures</p>
+            <Link to={'/collection'} className='w-full'>
+              <p className={`py-4 text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Vedic Treasures</p>
             </Link>
-            <Link to={'/about'}>
-              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>The Craft of Wholeness</p>
+            <Link to={'/about'} className='w-full'>
+              <p className={`py-4 text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>The Craft of Wholeness</p>
             </Link>
-            <Link to={'/contact'}>
-              <p className={`py-4 text-center text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Let's Connect</p>
+            <Link to={'/contact'} className='w-full'>
+              <p className={`py-4 text-[18px] transition-all text-black hover:bg-black hover:bg-opacity-10`}>Let's Connect</p>
             </Link>
           </motion.div>
         )}
