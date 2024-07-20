@@ -49,7 +49,7 @@ const AboutCollection = () => {
         )
     }
   return (
-    <div className='h-screen w-screen bg-[#131313] flex items-center justify-center'>
+    <div className='h-screen bg-[#131313] flex items-center justify-center'>
         <div className='flex mx-auto'>
             <div className='flex flex-col items-center text-start justify-center w-[40%] mx-auto'>
                 <p className='font-cormorant md:text-2xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#EDE6D6]'>
