@@ -15,6 +15,8 @@ import mob7 from './assets/mobile6.jpg'
 
 export const products = [
     {
+        id: 1,
+        productName: 'Side Table',
         title: "Consiousness",
         description: `The <strong>Side Table</strong> born from a single log of wood, it symbolises the beginning of manifestation from the supreme consciousness.`,
         src: img1,
@@ -22,6 +24,8 @@ export const products = [
         mobile: mob1
     },
     {
+        id: 2,
+        productName: 'Coffee Table',
         title: "Desire",
         description: "The <strong>Coffee Table</strong> like a seed, is a metaphor for desire, which is the first thought, on the journey from consciousness to manifestation.",
         src: img2,
@@ -29,6 +33,8 @@ export const products = [
         mobile: mob2
     },
     {
+        id: 3,
+        productName: 'Console Table',
         title: "Manifestation",
         description: "The <strong>Console Table</strong> depicts the manifestation of our desire, with an imagery alike the graceful unfolding of the sacred lotus flower.",
         src: img3,
@@ -36,6 +42,8 @@ export const products = [
         mobile: mob3
     },
     {
+        id: 4,
+        productName: 'Lounge Chair',
         title: "Hurdle",
         description: "The <strong>Lounge Chair’s</strong> back rest, depict the dilemmas we face. Whereas, the seating, is that calm space that helps one take a stepback, and plan the bigger leap.",
         src: img4,
@@ -43,12 +51,17 @@ export const products = [
         mobile: mob4
     },
     {
+        id: 5,
+        productName: 'Couch',
         title: "Harmony",
         description: "The <strong>Couch’s</strong> backrest keeps the two seating spaces intact, depicting the state of balance between colliding thoughts, which makes space for peace.",
         src: img5,
         align: "right-[5%]",
         mobile: mob5
-    },{
+    },
+    {
+        id: 6,
+        productName: 'Console Cabinet',
         title: "Illusion",
         description: "The lines of the <strong>Console Cabinet</strong> through seem wavy but are actually straight, creating an illusion, which is also the reality of creation. It’s all, still a mystery!",
         src: img6,
@@ -56,6 +69,8 @@ export const products = [
         mobile: mob6
     },
     {
+        id: 7,
+        productName: 'Bed',
         title: "Surrender",
         description: "The flowing lines on the <strong>Bed’s Backrest</strong> with no definite start or end, depict that phase of our life where we finally realise, creation is beyond our control and we let it take its natural flow.",
         src: img7,
