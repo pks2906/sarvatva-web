@@ -8,7 +8,7 @@ const LandingAbout = () => {
             <img 
                 src={img}
                 alt='craft-of-wholeness'
-                className='h-[50vh] md:h-[100vh] md:w-[60vw] object-cover'
+                className='h-[50vh] md:h-[100vh] md:w-[60vw] object-cover bg-[#131313]'
             />
             <div className='flex h-[50vh] md:mx-auto'>
                 <div className='text-[#131313] flex flex-col justify-center w-[80%] mx-auto px-6 md:px-0'>
