@@ -3,6 +3,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import emailjs from '@emailjs/browser';
+import { z } from 'zod';
 
 interface ProductProps {
   title: string;
@@ -12,6 +13,14 @@ interface ProductProps {
   mobile: string;
   productName: string;
 }
+
+const formSchema = z.object({
+  first_name: z.string().min(1, { message: "First name is required" }),
+  last_name: z.string().min(1, { message: "Last name is required" }),
+  communication: z.string().min(1, { message: "Mode of communication is required" }),
+  user_email: z.string().email({ message: "Invalid email address" }),
+  message: z.string().min(1, { message: "Message is required" }),
+});
 
 const PhoneInputField = ({ setPhoneNumber }: { setPhoneNumber: (phone: string) => void }) => {
   const handlePhoneChange = (value: string) => {
@@ -55,10 +64,34 @@ const PhoneInputField = ({ setPhoneNumber }: { setPhoneNumber: (phone: string) =
 
 const PopupForm = ({ onClose, productName }: { onClose: () => void, productName: string }) => {
   const form = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    first_name: '',
+    last_name: '',
+    communication: '',
+    user_email: '',
+    message: ''
+  });
   const [phoneNumber, setPhoneNumber] = useState<string>('');
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    const result = formSchema.safeParse({ ...formData });
+
+    if (!result.success) {
+      const errors = result.error.format();
+      const errorMessages = Object.values(errors).map((err: any) => err._errors).flat();
+      alert(`Validation errors:\n${errorMessages.join('\n')}`);
+      return;
+    }
 
     if (form.current) {
       emailjs
@@ -78,48 +111,6 @@ const PopupForm = ({ onClose, productName }: { onClose: () => void, productName:
   };
 
   return (
-    // <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-10">
-    //   <motion.div 
-    //     className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
-    //     initial={{ opacity: 0, scale: 0.8 }}
-    //     animate={{ opacity: 1, scale: 1 }}
-    //     exit={{ opacity: 0, scale: 0.8 }}
-    //   >
-    //     <div className="flex justify-between items-center mb-0 md:mb-8">
-    //       <h1 className="font-cormorant text-[#EDE6D6]/80 font-bold text-lg md:text-xl">Request More Information</h1>
-    //       <button 
-    //         className="text-[#EDE6D6]/80 font-medium text-lg md:text-xl"
-    //         onClick={onClose}  
-    //       >
-    //         &times;
-    //       </button>
-    //     </div>
-    //     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
-    //       <input type="text" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80"/>
-    //       <input type="text" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80"/>
-    //     </div>
-    //     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-    //       <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80">
-    //         <option value="none">Mode of Communication</option>
-    //         <option value="email">Email</option>
-    //         <option value="sms">WhatsApp</option>
-    //       </select>
-    //     </div>
-    //     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-    //       <input type="email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80"/>
-    //     </div>
-    //     <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 mb-4">
-    //       {/* <input type="tel" placeholder="Phone No." className="font-avenir bg-transparent py-2 font-bold border-b border-white text-white placeholder:text-white"/> */}
-    //       <PhoneInputField />
-    //     </div>
-    //     <div className="my-4">
-    //       <textarea placeholder="Your Message" className="placeholder:text-[#EDE6D6]/80 font-bold border rounded-md text-[#EDE6D6]/80 font-avenir bg-transparent w-full border-[#EDE6D6]/80 p-2 resize-none" rows={4}></textarea>
-    //     </div>
-    //     <div className="md:mt-4">
-    //       <button onClick={onClose} className="w-full md:w-[100px] transition-all rounded-md font-avenir font-medium text-center hover:opacity-75 px-4 py-2 bg-[#EDE6D6]/80 border-[0.5px] text-[#131313]/80 tracking-wider text-sm">SUBMIT</button>
-    //     </div>
-    //   </motion.div>
-    // </div>
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-10">
       <motion.div 
         className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
@@ -131,7 +122,7 @@ const PopupForm = ({ onClose, productName }: { onClose: () => void, productName:
           <h1 className="font-cormorant text-[#EDE6D6]/80 font-bold text-lg md:text-xl">Request More Information</h1>
           <button 
             className="text-[#EDE6D6]/80 font-medium text-lg md:text-xl"
-            onClick={onClose}  
+            onClick={onClose}
           >
             &times;
           </button>
@@ -140,24 +131,24 @@ const PopupForm = ({ onClose, productName }: { onClose: () => void, productName:
           <input type="hidden" name="product_name" value={productName} />
           <input type="hidden" name="phone_number" value={phoneNumber} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
-            <input type="text" name="first_name" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" required />
-            <input type="text" name="last_name" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" required />
+            <input type="text" name="first_name" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" onChange={handleChange} required />
+            <input type="text" name="last_name" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" onChange={handleChange} required />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-            <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80" required>
+            <select name="communication" id="mode" className="bg-transparent font-avenir font-bold text-start py-2 border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80" onChange={handleChange} required>
               <option value="">Mode of Communication</option>
               <option value="email">Email</option>
               <option value="sms">WhatsApp</option>
             </select>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-            <input type="email" name="user_email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80" required />
+            <input type="email" name="user_email" placeholder="Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80" onChange={handleChange} required />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 mb-4">
             <PhoneInputField setPhoneNumber={setPhoneNumber}/>
           </div>
           <div className="my-4">
-            <textarea name="message" placeholder="Your Message" className="placeholder:text-[#EDE6D6]/80 font-bold border rounded-md text-[#EDE6D6]/80 font-avenir bg-transparent w-full border-[#EDE6D6]/80 p-2 resize-none" rows={4}></textarea>
+            <textarea name="message" placeholder="Your Message" className="placeholder:text-[#EDE6D6]/80 font-bold border rounded-md text-[#EDE6D6]/80 font-avenir bg-transparent w-full border-[#EDE6D6]/80 p-2 resize-none" rows={4} onChange={handleChange} required></textarea>
           </div>
           <div className="md:mt-4">
             <button type="submit" className="w-full md:w-[100px] transition-all rounded-md font-avenir font-medium text-center hover:opacity-75 px-4 py-2 bg-[#EDE6D6]/80 border-[0.5px] text-[#131313]/80 tracking-wider text-sm">SUBMIT</button>
@@ -262,4 +253,4 @@ const ProductCard = ({ title, description, src, align, mobile, productName }: Pr
   )
 }
 
-export default ProductCard
+export default ProductCard;

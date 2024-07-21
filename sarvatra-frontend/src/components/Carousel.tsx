@@ -28,7 +28,7 @@ const CarouselComponent = () => {
         fullHeightHover
         stopAutoPlayOnHover={false}
         swipe
-        animation="fade"
+        animation="slide"
         duration={1000}
         interval={4000}
         indicators={true}
