@@ -21,7 +21,7 @@ const AboutHero = () => {
             opacity: 1,
             transition: {
                 duration: 0.8,
-                delay: i * 1 // Adjust delay for staggered effect
+                delay: i * 1
             }
         })
     };
