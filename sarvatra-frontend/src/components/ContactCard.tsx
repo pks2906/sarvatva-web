@@ -42,7 +42,7 @@ const ContactCard = () => {
     }
 
     emailjs
-      .sendForm('service_0ezieoa', 'template_2ce02ob', form.current!, { publicKey: 'XcW2jNaUhvrtFXOHS' })
+      .sendForm('service_v94s5qj', 'template_kvt7ttf', form.current!, { publicKey: '6MTBElTmUe24ksdb0' })
       .then(
         () => {
           console.log('SUCCESS!');

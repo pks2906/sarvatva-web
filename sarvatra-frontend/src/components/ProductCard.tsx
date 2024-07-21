@@ -62,7 +62,7 @@ const PopupForm = ({ onClose, productName }: { onClose: () => void, productName:
 
     if (form.current) {
       emailjs
-        .sendForm('service_0ezieoa', 'template_trvb30j', form.current, { publicKey: 'XcW2jNaUhvrtFXOHS' })
+        .sendForm('service_v94s5qj', 'template_q43g4hz', form.current, { publicKey: '6MTBElTmUe24ksdb0' })
         .then(
           () => {
             console.log('SUCCESS!');
