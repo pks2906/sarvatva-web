@@ -1,11 +1,3 @@
-@font-face {
-    font-family: 'Gotu';
-    src: url('./fonts/Gotu-Regular.otf') format('opentype'),
-         url('./fonts/Gotu-Regular.ttf') format('truetype');
-    font-weight: 400;
-    font-style: normal;
-  }
-
   @font-face {
      font-family: 'Avenir';
      src: url('./fonts/avenir-font/AvenirLTStd-Black.otf') format('opentype'),
@@ -21,13 +13,6 @@
           url('./fonts/avenir-font/AvenirLTStd-Oblique.otf') format('opentype'),
           url('./fonts/avenir-font/AvenirLTStd-Roman.otf') format('opentype');
   }
-
-
-.staatliches-regular {
-     font-family: "Staatliches", sans-serif;
-     font-weight: 400;
-     font-style: normal;
-}
 
 .cormorant-garamond-light {
      font-family: "Cormorant Garamond", serif;
