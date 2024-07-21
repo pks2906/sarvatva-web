@@ -63,7 +63,7 @@ export const products = [
         id: 6,
         productName: 'Console Cabinet',
         title: "Illusion",
-        description: "The lines of the <strong>Console Cabinet</strong> through seem wavy but are actually straight, creating an illusion, which is also the reality of creation. It’s all, still a mystery!",
+        description: "The lines of the <strong>Console Cabinet</strong> though seem wavy but are actually straight, creating an illusion, which is also the reality of creation. It’s all, still a mystery!",
         src: img6,
         align: "left-[10%]",
         mobile: mob6

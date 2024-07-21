@@ -18,7 +18,7 @@ const fadeIn: Variants = {
   visible: (i: number) => ({
     opacity: 1,
     transition: {
-      delay: i * 0.3,
+      delay: i * 0.15,
       duration: 0.5,
     },
   }),

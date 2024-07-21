@@ -10,7 +10,7 @@ const formSchema = z.object({
   first_name: z.string().min(1, { message: "First name is required" }),
   last_name: z.string().min(1, { message: "Last name is required" }),
   user_email: z.string().email({ message: "Invalid email address" }),
-  phone: z.string().min(1, { message: "Phone number is required" }),
+  phone: z.string().min(1, { message: "Phone number is required" }).max(12, { message: "Invalid phone number" }),
   message: z.string().min(1, { message: "Message is required" }),
   subscribe: z.boolean().optional(),
 });
