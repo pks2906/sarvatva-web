@@ -36,7 +36,7 @@ const LandingHero = () => {
               className='font-cormorant text-4xl md:text-7xl'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.1 }}
+              transition={{ duration: 1.1, delay: 1 }}
             >
               Tad Ekam
             </motion.h1>
@@ -44,7 +44,7 @@ const LandingHero = () => {
               className='font-avenir text-balance md:text-[20px] tracking-wider font-light'
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
-              transition={{ duration: 1.1, delay: 1 }}
+              transition={{ duration: 1.1, delay: 2 }}
             >
               Inspired by the Rig Veda
             </motion.p>
@@ -55,7 +55,7 @@ const LandingHero = () => {
           className='absolute bottom-3 flex flex-col items-center w-full mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2 }}
+          transition={{ duration: 1, delay: 3 }}
         >
             <svg className="w-8 h-8 md:w-10 md:h-10 text-[#EDE6D6]" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                 <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m5 15 7-7 7 7"/>
