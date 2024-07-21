@@ -1,19 +1,34 @@
 import banner from "../assets/cu.png";
 import React, { useRef, ChangeEvent, FormEvent } from 'react';
 import emailjs from '@emailjs/browser';
+import { z } from 'zod';
+
+// Define the Zod schema for the form data
+const formSchema = z.object({
+  company: z.string().min(1, { message: "Company is required" }),
+  country: z.string().min(1, { message: "Country is required" }),
+  first_name: z.string().min(1, { message: "First name is required" }),
+  last_name: z.string().min(1, { message: "Last name is required" }),
+  user_email: z.string().email({ message: "Invalid email address" }),
+  phone: z.string().min(1, { message: "Phone number is required" }),
+  message: z.string().min(1, { message: "Message is required" }),
+  subscribe: z.boolean().optional(),
+});
+
+const initialFormState = {
+  company: '',
+  country: '',
+  first_name: '',
+  last_name: '',
+  user_email: '',
+  phone: '',
+  message: '',
+  subscribe: false
+};
 
 const ContactCard = () => {
   const form = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = React.useState({
-    company: '',
-    country: '',
-    first_name: '',
-    last_name: '',
-    user_email: '',
-    phone: '',
-    message: '',
-    subscribe: false
-  });
+  const [formData, setFormData] = React.useState(initialFormState);
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -34,10 +49,14 @@ const ContactCard = () => {
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate required fields
-    const { company, country, first_name, last_name, user_email, phone, message } = formData;
-    if (!company || !country || !first_name || !last_name || !user_email || !phone || !message) {
-      alert('Please fill in all the required fields.');
+    // Validate form data using Zod
+    const result = formSchema.safeParse(formData);
+
+    if (!result.success) {
+      // Handle validation errors
+      const errors = result.error.format();
+      const errorMessages = Object.values(errors).map((err: any) => err._errors).flat();
+      alert(`Validation errors:\n${errorMessages.join('\n')}`);
       return;
     }
 
@@ -47,6 +66,8 @@ const ContactCard = () => {
         () => {
           console.log('SUCCESS!');
           alert('Email sent successfully');
+          setFormData(initialFormState); // Clear the form after successful submission
+          form.current?.reset(); // Reset the form in the DOM
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -69,7 +90,7 @@ const ContactCard = () => {
           <input name="first_name" id="first_name" type="text" placeholder="First Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
           <input name="last_name" id="last_name" type="text" placeholder="Last Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
           <input name="user_email" id="user_email" type="email" placeholder="Email *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="phone" id="phone" type="tel" placeholder="Phone No. *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
+          <input name="phone" id="phone" type="number" placeholder="Phone No. *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
         </div>
         <div className="flex flex-col my-4 w-[90%]">
           <textarea name="message" id="message" placeholder="Tell us more about your vision? We would love to collaborate with you *" className="border rounded-md text-sm md:text-lg font-avenir placeholder:italic border-[#131313] p-2 resize-none" rows={8} onChange={handleChange} required></textarea>
