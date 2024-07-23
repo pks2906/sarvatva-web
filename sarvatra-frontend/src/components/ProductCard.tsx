@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/form/PopupForm";
 
@@ -14,6 +14,7 @@ interface ProductProps {
 const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, mobile, productName }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
@@ -29,11 +30,20 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
       document.body.classList.add('overflow-hidden');
 
       const handleScroll = () => {
-        handleCloseForm();
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
+
+        scrollTimeoutRef.current = window.setTimeout(() => {
+          handleCloseForm();
+        }, 100); // Adjust the delay as needed
       };
 
       window.addEventListener("scroll", handleScroll);
       return () => {
+        if (scrollTimeoutRef.current) {
+          clearTimeout(scrollTimeoutRef.current);
+        }
         window.removeEventListener("scroll", handleScroll);
         document.body.classList.remove('overflow-hidden');
       };
