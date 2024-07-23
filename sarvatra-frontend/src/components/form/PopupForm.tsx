@@ -5,6 +5,7 @@ import 'react-phone-input-2/lib/style.css';
 import emailjs from '@emailjs/browser';
 import { z } from 'zod';
 import CustomSelector from "./FormSelector";
+import toast from "react-hot-toast";
 
 const formSchema = z.object({
   first_name: z.string().min(1, { message: "First name is required" }),
@@ -99,11 +100,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
     if (!result.success) {
       const errors = result.error.format();
       const errorMessages = Object.values(errors).map((err: any) => err._errors).flat();
-      alert(`Validation errors:\n${errorMessages.join('\n')}`);
+      console.log(`Validation errors:\n${errorMessages.join('\n')}`);
       return;
     }
-
-    alert(formData.communication);
 
     if (form.current) {
       emailjs
@@ -111,12 +110,12 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
         .then(
           () => {
             console.log('SUCCESS!');
-            alert('Email sent successfully');
+            toast.success('Request sent!');
             onClose();
           },
           (error) => {
-            console.log('FAILED...', error.text);
-            alert('Failed to send email');
+            toast.error('Couldn\'t send request');
+            console.log(error.text);
           }
         );
     }

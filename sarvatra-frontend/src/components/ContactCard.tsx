@@ -3,8 +3,8 @@ import React, { useRef, ChangeEvent, FormEvent, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { z } from 'zod';
 import PhoneInput from "react-phone-input-2";
+import toast from "react-hot-toast";
 
-// Define the Zod schema for the form data
 const formSchema = z.object({
   company: z.string().min(1, { message: "Company is required" }),
   country: z.string().min(1, { message: "Country is required" }),
@@ -105,14 +105,14 @@ const ContactCard = () => {
       .then(
         () => {
           console.log('SUCCESS!');
-          alert('Email sent successfully');
+          toast.success('Message sent!');
           setFormData(initialFormState);
           setPhoneNumber(''); 
           form.current?.reset(); 
         },
         (error) => {
           console.log('FAILED...', error.text);
-          alert('Failed to send email');
+          toast.error('Couldn\'t send message');
         }
       );
   };
