@@ -9,12 +9,13 @@ const CollectionsPage = () => {
     <div className="overflow-x-clip bg-[#131313]">
       <Navbar />
       <AboutCollection />
-      <div className="mb-[-50vh]">
+      <div className="">
         {products.map((product, index) => {
-          return <ProductCard key={index} {...product}/>
+          return (<ProductCard key={index} {...product}/>)
         })}
+        <Footer />
       </div>
-      <Footer />
+      
     </div>
   )
 }

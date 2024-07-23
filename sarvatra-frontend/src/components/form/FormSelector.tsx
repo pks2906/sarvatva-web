@@ -1,16 +1,30 @@
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const CustomSelector = ({ value, onChange }: { value: string, onChange: (value: string) => void }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement>(null);
 
   const handleSelect = (option: string) => {
     onChange(option);
     setIsOpen(false);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+      setIsOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="relative w-full">
+    <div className="relative w-full" ref={dropdownRef}>
       <div
         className="cursor-pointer bg-transparent font-avenir font-bold py-2 border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 flex justify-between items-center"
         onClick={() => setIsOpen(!isOpen)}

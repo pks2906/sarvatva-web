@@ -43,17 +43,17 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
     setIsFormOpen(false);
   };
 
-  if (isMobile) {
-    return (
-      <div className='h-[150vh] sticky top-0'>
-        <div 
-          className={`h-[100vh]`}
-          style={{
-            background: `url(${mobile})`,
-            backgroundPosition: 'center',
-            backgroundSize: 'cover'
-          }}
-        >
+  return (
+    <div className='h-[150vh] sticky top-0'>
+      <div 
+        className={`h-[100vh]`}
+        style={{
+          background: `url(${isMobile ? mobile : src})`,
+          backgroundPosition: 'center',
+          backgroundSize: 'cover'
+        }}
+      >
+        {isMobile ? (
           <div className="flex flex-col justify-between items-center h-full text-white">
             <div className="mt-[35%] text-center mx-auto w-[80%]">
               <h1 className="font-cormorant text-4xl mb-4">{title}</h1>
@@ -66,40 +66,29 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
               REQUEST A QUOTE
             </button>
           </div>
-        </div>
-        <AnimatePresence>
-          {isFormOpen && <PopupForm onClose={handleCloseForm} productName={productName} />}
-        </AnimatePresence>
-      </div>
-    );
-  }
-
-  return (
-    <div className='h-[150vh] sticky top-0'>
-      <div 
-        className={`h-[100vh]`}
-        style={{
-          background: `url(${src})`,
-          backgroundSize: 'cover'
-        }}
-      >
-        <div className={`absolute top-[25%] text-[#EDE6D6] ${align} w-[40%]`}>
-           <div className='flex flex-col mx-auto'>
-                <h1 className='font-cormorant text-opacity-80 text-4xl md:text-6xl'>
-                    {title}
-                </h1>
-                <p className='w-[70%] text-balance text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>
-                <button 
-                  className='font-avenir flex text-opacity-80 border-opacity-80 font-medium shadow-lg items-center justify-center bg-white/10 backdrop-blur-sm border-[0.5px] border-[#EDE6D6] w-[200px] text-sm py-2 px-4 rounded my-16 hover:bg-[#EDE6D6] hover:text-[#131313] transition-all tracking-widest'
-                  onClick={handleButtonClick}
-                >
-                    REQUEST A QUOTE
-                </button>
-           </div>
-        </div>
+        ) : (
+          <div className={`absolute top-[25%] text-[#EDE6D6] ${align} w-[40%]`}>
+            <div className='flex flex-col mx-auto'>
+              <h1 className='font-cormorant text-opacity-80 text-4xl md:text-6xl'>
+                {title}
+              </h1>
+              <p className='w-[70%] text-balance text-[20px] text-opacity-80 mt-[28px] font-avenir leading-9' dangerouslySetInnerHTML={{ __html: description }}></p>
+              <button 
+                className='font-avenir flex text-opacity-80 border-opacity-80 font-medium shadow-lg items-center justify-center bg-white/10 backdrop-blur-sm border-[0.5px] border-[#EDE6D6] w-[200px] text-sm py-2 px-4 rounded my-16 hover:bg-[#EDE6D6] hover:text-[#131313] transition-all tracking-widest'
+                onClick={handleButtonClick}
+              >
+                REQUEST A QUOTE
+              </button>
+            </div>
+          </div>
+        )}
       </div>
       <AnimatePresence>
-        {isFormOpen && <PopupForm onClose={handleCloseForm} productName={productName}/>}
+        {isFormOpen && 
+          <div className="fixed inset-0 z-40">
+            <PopupForm onClose={handleCloseForm} productName={productName} />
+          </div>
+        }
       </AnimatePresence>
     </div>
   );

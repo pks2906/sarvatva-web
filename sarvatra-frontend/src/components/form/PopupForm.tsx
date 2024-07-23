@@ -123,9 +123,9 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-10">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#131313] bg-opacity-20">
       <motion.div 
-        className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md"
+        className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md z-60"
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
         exit={{ opacity: 0, scale: 0.8 }}
@@ -144,8 +144,8 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
           <input type="hidden" name="phone_number" value={phoneNumber} />
           <input type="hidden" name="communication" value={formData.communication} />
           <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-8 my-4">
-            <input type="text" name="first_name" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" onChange={handleChange} required />
-            <input type="text" name="last_name" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80" onChange={handleChange} required />
+            <input type="text" name="first_name" placeholder="First Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80 rounded-none" onChange={handleChange} required />
+            <input type="text" name="last_name" placeholder="Last Name" className="bg-transparent placeholder:text-[#EDE6D6]/80 text-[#EDE6D6]/80 font-avenir font-bold py-2 border-b border-[#EDE6D6]/80 rounded-none" onChange={handleChange} required />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
             <CustomSelector
@@ -154,7 +154,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
             />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 my-4">
-            <input type="email" name="user_email" placeholder="Your Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80" onChange={handleChange} required />
+            <input type="email" name="user_email" placeholder="Your Email" className="font-avenir bg-transparent py-2 font-bold border-b border-[#EDE6D6]/80 text-[#EDE6D6]/80 placeholder:text-[#EDE6D6]/80 rounded-none" onChange={handleChange} required />
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-1 mb-4">
             <PhoneInputField setPhoneNumber={setPhoneNumber}/>

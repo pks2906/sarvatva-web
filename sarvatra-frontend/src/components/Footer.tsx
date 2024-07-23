@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <div className="relative bottom-0 w-full h-auto pt-28 bg-[#131313]">
+    <div className="relative z-0 bottom-0 w-full h-auto pt-28 bg-[#131313]">
         <div className="flex flex-col w-full md:flex-row justify-between md:mx-[72px] px-10">
             <div className="flex flex-col w-9/10 md:w-1/2">
                 <h1 className="font-cormorant opacity-80 text-[#EDE6D6] text-xl md:text-2xl">Join our Community</h1>
