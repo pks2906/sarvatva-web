@@ -52,7 +52,7 @@ const LandingHero = () => {
         </div>
         <motion.div 
           onClick={scrollToNext} 
-          className='absolute bottom-0 md:bottom-3 flex flex-col items-center w-full mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'
+          className='absolute bottom-3 flex flex-col items-center w-full mx-auto animate-bounce -space-y-6 opacity-80 cursor-pointer'
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 3 }}
