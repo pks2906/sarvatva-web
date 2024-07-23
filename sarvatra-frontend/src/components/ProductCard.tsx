@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { AnimatePresence } from "framer-motion";
 import PopupForm from "../components/form/PopupForm";
 
@@ -14,6 +14,7 @@ interface ProductProps {
 const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, mobile, productName }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -26,19 +27,20 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
   }, [isFormOpen]);
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (scrollTimeoutRef.current) {
+        clearTimeout(scrollTimeoutRef.current);
+      }
+
+      scrollTimeoutRef.current = window.setTimeout(() => {
+        if (!isKeyboardOpen) {
+          handleCloseForm();
+        }
+      }, 100); // Adjust the delay as needed
+    };
+
     if (isFormOpen) {
       document.body.classList.add('overflow-hidden');
-
-      const handleScroll = () => {
-        if (scrollTimeoutRef.current) {
-          clearTimeout(scrollTimeoutRef.current);
-        }
-
-        scrollTimeoutRef.current = window.setTimeout(() => {
-          handleCloseForm();
-        }, 100); // Adjust the delay as needed
-      };
-
       window.addEventListener("scroll", handleScroll);
       return () => {
         if (scrollTimeoutRef.current) {
@@ -50,7 +52,20 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
     } else {
       document.body.classList.remove('overflow-hidden');
     }
-  }, [isFormOpen]);
+  }, [isFormOpen, isKeyboardOpen]);
+
+  useEffect(() => {
+    const handleKeyboardShow = () => setIsKeyboardOpen(true);
+    const handleKeyboardHide = () => setIsKeyboardOpen(false);
+
+    window.addEventListener("focusin", handleKeyboardShow); // For detecting keyboard show
+    window.addEventListener("focusout", handleKeyboardHide); // For detecting keyboard hide
+
+    return () => {
+      window.removeEventListener("focusin", handleKeyboardShow);
+      window.removeEventListener("focusout", handleKeyboardHide);
+    };
+  }, []);
 
   const handleButtonClick = () => {
     setIsFormOpen(true);
