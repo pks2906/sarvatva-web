@@ -27,12 +27,19 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
   useEffect(() => {
     if (isFormOpen) {
       document.body.classList.add('overflow-hidden');
+
+      const handleScroll = () => {
+        handleCloseForm();
+      };
+
+      window.addEventListener("scroll", handleScroll);
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+        document.body.classList.remove('overflow-hidden');
+      };
     } else {
       document.body.classList.remove('overflow-hidden');
     }
-    return () => {
-      document.body.classList.remove('overflow-hidden');
-    };
   }, [isFormOpen]);
 
   const handleButtonClick = () => {
