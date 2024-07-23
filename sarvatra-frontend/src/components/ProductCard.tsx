@@ -20,9 +20,18 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
       setIsMobile(window.innerWidth <= 768);
     };
 
+    if (isFormOpen) {
+      document.body.classList.add('overflow-hidden');
+    } else {
+      document.body.classList.remove('overflow-hidden');
+    }
+
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      document.body.classList.remove('overflow-hidden');
+    } 
+  }, [isFormOpen]);
 
   useEffect(() => {
     if (isFormOpen) {
