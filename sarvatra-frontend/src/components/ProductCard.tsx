@@ -36,7 +36,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
         if (!isKeyboardOpen) {
           handleCloseForm();
         }
-      }, 100); // Adjust the delay as needed
+      }, 50); // Adjust the delay as needed
     };
 
     if (isFormOpen) {
