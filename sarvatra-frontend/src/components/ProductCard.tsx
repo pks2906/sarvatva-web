@@ -33,7 +33,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
       }
 
       scrollTimeoutRef.current = window.setTimeout(() => {
-        if (!isKeyboardOpen) {
+        if (!isMobile || !isKeyboardOpen) {
           handleCloseForm();
         }
       }, 50); // Adjust the delay as needed
@@ -52,7 +52,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
     } else {
       document.body.classList.remove('overflow-hidden');
     }
-  }, [isFormOpen, isKeyboardOpen]);
+  }, [isFormOpen, isMobile, isKeyboardOpen]);
 
   useEffect(() => {
     const handleKeyboardShow = () => setIsKeyboardOpen(true);
