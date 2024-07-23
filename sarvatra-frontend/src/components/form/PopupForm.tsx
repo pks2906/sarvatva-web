@@ -78,11 +78,11 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
 
   useEffect(() => {
     // Add class to disable scrolling when component mounts
-    document.body.classList.add('overflow-hidden');
+    document.body.style.overflow = 'hidden';
 
     // Remove class when component unmounts
     return () => {
-      document.body.classList.remove('overflow-hidden');
+      document.body.style.overflow = 'auto';
     };
   }, []);
 
@@ -144,7 +144,10 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
           <h1 className="font-cormorant text-[#EDE6D6]/80 font-bold text-lg md:text-xl">Request More Information</h1>
           <button 
             className="text-[#EDE6D6]/80 font-medium text-lg md:text-xl"
-            onClick={onClose}
+            onClick={() => {
+              onClose();
+              document.body.style.overflow = 'auto';
+            }}
           >
             &times;
           </button>
