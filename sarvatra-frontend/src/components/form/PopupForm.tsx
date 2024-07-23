@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
@@ -75,6 +75,16 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
     message: ''
   });
   const [phoneNumber, setPhoneNumber] = useState<string>('');
+
+  useEffect(() => {
+    // Add class to disable scrolling when component mounts
+    document.body.classList.add('overflow-hidden');
+
+    // Remove class when component unmounts
+    return () => {
+      document.body.classList.remove('overflow-hidden');
+    };
+  }, []);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
