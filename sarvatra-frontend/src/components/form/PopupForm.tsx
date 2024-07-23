@@ -133,7 +133,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#131313] bg-opacity-20">
+    <div className="fixed inset-0 z-50 flex items-center justify-center bg-[#131313] bg-opacity-20 h-[100%] overflow-y-hidden">
       <motion.div 
         className="bg-white bg-opacity-10 flex flex-col p-4 md:p-8 rounded-md shadow-lg w-[90%] md:w-[60%] backdrop-blur-md z-60"
         initial={{ opacity: 0, scale: 0.8 }}
