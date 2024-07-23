@@ -1,7 +1,8 @@
 import banner from "../assets/cu.png";
-import React, { useRef, ChangeEvent, FormEvent } from 'react';
+import React, { useRef, ChangeEvent, FormEvent, useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { z } from 'zod';
+import PhoneInput from "react-phone-input-2";
 
 // Define the Zod schema for the form data
 const formSchema = z.object({
@@ -10,10 +11,51 @@ const formSchema = z.object({
   first_name: z.string().min(1, { message: "First name is required" }),
   last_name: z.string().min(1, { message: "Last name is required" }),
   user_email: z.string().email({ message: "Invalid email address" }),
-  phone: z.string().min(1, { message: "Phone number is required" }).max(12, { message: "Invalid phone number" }),
   message: z.string().min(1, { message: "Message is required" }),
   subscribe: z.boolean().optional(),
 });
+
+const PhoneInputField: React.FC<{ phoneNumber: string, setPhoneNumber: (phone: string) => void }> = ({ phoneNumber, setPhoneNumber }) => {
+  const handlePhoneChange = (value: string) => {
+    setPhoneNumber(value);
+  };
+
+  return (
+    <div className="flex flex-col my-4">
+      <PhoneInput
+        country={'in'}
+        value={phoneNumber}
+        inputStyle={{
+          width: '100%',
+          backgroundColor: 'transparent',
+          color: '#131313',
+          borderBottom: '1px solid #131313',
+          borderTop: 'none',
+          borderLeft: 'none',
+          borderRight: 'none',
+          borderRadius: '0px',
+          fontFamily: 'avenir',
+          fontWeight: 'light',
+          padding: '0 40px',
+        }}
+        buttonStyle={{
+          backgroundColor: 'transparent',
+          border: 'none',
+        }}
+        dropdownStyle={{
+          backgroundColor: '#EDE6D6',
+          color: '#131313',
+          borderRadius: '6px',
+          fontFamily: 'avenir'
+        }}
+        containerStyle={{
+          width: '100%',
+        }}
+        onChange={handlePhoneChange}
+      />
+    </div>
+  );
+};
 
 const initialFormState = {
   company: '',
@@ -21,14 +63,14 @@ const initialFormState = {
   first_name: '',
   last_name: '',
   user_email: '',
-  phone: '',
   message: '',
   subscribe: false
 };
 
 const ContactCard = () => {
   const form = useRef<HTMLFormElement>(null);
-  const [formData, setFormData] = React.useState(initialFormState);
+  const [formData, setFormData] = useState(initialFormState);
+  const [phoneNumber, setPhoneNumber] = useState<string>('');
 
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value, type } = e.target;
@@ -49,11 +91,9 @@ const ContactCard = () => {
   const sendEmail = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Validate form data using Zod
     const result = formSchema.safeParse(formData);
 
     if (!result.success) {
-      // Handle validation errors
       const errors = result.error.format();
       const errorMessages = Object.values(errors).map((err: any) => err._errors).flat();
       alert(`Validation errors:\n${errorMessages.join('\n')}`);
@@ -61,13 +101,14 @@ const ContactCard = () => {
     }
 
     emailjs
-      .sendForm('service_v94s5qj', 'template_kvt7ttf', form.current!, { publicKey: '6MTBElTmUe24ksdb0' })
+      .sendForm('service_0ezieoa', 'template_2ce02ob', form.current!, { publicKey: 'XcW2jNaUhvrtFXOHS' })
       .then(
         () => {
           console.log('SUCCESS!');
           alert('Email sent successfully');
-          setFormData(initialFormState); // Clear the form after successful submission
-          form.current?.reset(); // Reset the form in the DOM
+          setFormData(initialFormState);
+          setPhoneNumber(''); 
+          form.current?.reset(); 
         },
         (error) => {
           console.log('FAILED...', error.text);
@@ -85,12 +126,13 @@ const ContactCard = () => {
           <p className="font-avenir font-light text-lg md:text-xl text-[#131313]/50">Over a cup of Tea...</p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 my-2 md:my-8 gap-x-4 md:gap-x-24 gap-y-2 md:gap-y-10 w-[90%]">
-          <input name="company" id="company" type="text" placeholder="Company / Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="country" id="country" type="text" placeholder="Country *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="first_name" id="first_name" type="text" placeholder="First Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="last_name" id="last_name" type="text" placeholder="Last Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="user_email" id="user_email" type="email" placeholder="Email *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
-          <input name="phone" id="phone" type="number" placeholder="Phone No. *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313]" onChange={handleChange} required />
+          <input type="hidden" name="phone" value={phoneNumber} />
+          <input name="company" id="company" type="text" placeholder="Company / Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          <input name="country" id="country" type="text" placeholder="Country *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          <input name="first_name" id="first_name" type="text" placeholder="First Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          <input name="last_name" id="last_name" type="text" placeholder="Last Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          <input name="user_email" id="user_email" type="email" placeholder="Email *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          <PhoneInputField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
         </div>
         <div className="flex flex-col my-4 w-[90%]">
           <textarea name="message" id="message" placeholder="Tell us more about your vision? We would love to collaborate with you *" className="border rounded-md text-sm md:text-lg font-avenir placeholder:italic border-[#131313] p-2 resize-none" rows={8} onChange={handleChange} required></textarea>
