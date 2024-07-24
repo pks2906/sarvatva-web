@@ -44,7 +44,15 @@ const AboutCollection = () => {
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
                         >
-                        Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
+                        The collection narrates the story of how creation began from that one Supreme Consciousness
+                        </motion.p>
+                        <motion.p 
+                            className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            transition={{ duration: 1 }}
+                        >
+                        The seven exquisite creation takes us on a journey 13.8 Billion years back in time whence a desire manifested into the profound creation we call the Cosmos.
                         </motion.p>
                     </div>
                 </div>
@@ -77,7 +85,15 @@ const AboutCollection = () => {
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    Our Collection ponders upon the mystery of what existed before creation of Cosmos and how the creation came about. 
+                    The collection narrates the story of how creation began from that one Supreme Consciousness
+                </motion.p>
+                <motion.p 
+                    className='font-cormorant text-balance md:text-2xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    transition={{ duration: 1 }}
+                >
+                    The seven exquisite creation takes us on a journey 13.8 Billion years back in time whence a desire manifested into the profound creation we call the Cosmos.
                 </motion.p>
             </div>
             <div className='w-[60%] min-w-[500px] flex items-center justify-center'>
