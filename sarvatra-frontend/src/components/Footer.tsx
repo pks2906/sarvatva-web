@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
   return (
     <div className="relative z-0 bottom-0 w-full h-auto pt-28 bg-[#131313]">
-        <div className="flex flex-col w-full md:flex-row justify-between md:mx-[72px] px-10">
+        <div className="flex flex-col w-full md:flex-row justify-between md:mx-4 lg:mx-[72px] px-10">
             <div className="flex flex-col w-9/10 md:w-1/2">
                 <h1 className="font-cormorant opacity-80 text-[#EDE6D6] text-xl md:text-2xl">Join our Community</h1>
                 <p className="font-avenir text-[#EDE6D6] opacity-80 mt-4 md:mt-10">Subscribe to our mailing list</p>
@@ -36,15 +36,15 @@ const Footer = () => {
                 <p className="mt-4 md:mt-10 text-[#ECE6D7] opacity-80 font-avenir">connect@sarvatva.co.in</p>
                 <p className="mt-2 md:mt-6 text-[#ECE6D7] opacity-80 font-avenir tracking-wider">+91 - 8106865897</p>
                 <h1 className="font-cormorant opacity-80 text-[#EDE6D6] text-xl md:text-2xl mt-10">Follow Us</h1>
-                <div className="grid grid-cols-3 w-[60%] mt-4 md:mt-10">
+                <div className="grid grid-cols-3 w-[60%] mt-4 md:mt-10 gap-x-4">
                     <a href="https://pin.it/4FwD7UyAQ" className='cursor-auto'>
-                        <img src={pi} alt="Pinterest" className='h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
+                        <img src={pi} alt="Pinterest" className='h-[28px] lg:h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
                     </a>
                     <a href="https://www.linkedin.com/company/sarvatva-craftingwholeness/?viewAsMember=true" className='cursor-auto'>
-                        <img src={li} alt="Linkedin" className='h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
+                        <img src={li} alt="Linkedin" className='h-[28px] lg:h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
                     </a>
                     <a href="https://www.instagram.com/_sarvatva_?igsh=czE2b29nNnE4YnFm&utm_source=qr" className='cursor-auto'>
-                        <img src={ig} alt="Instagram" className='h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
+                        <img src={ig} alt="Instagram" className='h-[28px] lg:h-[36px] opacity-80 hover:opacity-60 transition-opacity cursor-pointer'/>
                     </a>
                 </div>
             </div>
