@@ -17,9 +17,9 @@ const CarouselComponent = () => {
 
     useEffect(() => {
         const handleResize = () => {
-          setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 768);
         };
-    
+
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -106,9 +106,9 @@ const ImageCarousel = ({ image }: { image: string }) => {
 
     useEffect(() => {
         const handleResize = () => {
-          setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 768);
         };
-    
+
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -154,12 +154,12 @@ const ImageCarousel = ({ image }: { image: string }) => {
                 }}
             >
                 <div className="absolute inset-0 top-[35%] left-[10%] text-[#EDE6D6] flex flex-col">
-                    <h1 className='font-cormorant text-6xl md:mb-[8px]'>Vedic Furniture</h1>
-                    <p className='font-avenir text-balance font-light md:w-[30%] text-[20px] leading-9 my-10'>
+                    <h1 className='font-cormorant text-6xl lg:mb-[8px]'>Vedic Furniture</h1>
+                    <p className='font-avenir text-balance font-light md:w-[40%] lg:w-[30%] text-[20px] leading-9 my-10'>
                     Each design is an intention, to manifest <span className='font-bold'>“That One”</span>, into tangibility through <b className='font-bold'>sculptural, organic</b> and <b className='font-bold'>tactile</b> forms, harmoniously blending art with functionality.
                     </p>
                     <Link to={'/collection'}>
-                        <button className='md:w-[200px] font-medium text-sm font-avenir px-4 py-2 rounded-md bg-white/10 border-[0.5px] border-[#ede6d6] md:mt-[28px] hover:bg-[#ede6d6] hover:text-[#131313] shadow-lg transition-all tracking-widest backdrop-blur-sm'>
+                        <button className='lg:w-[200px] font-medium text-sm font-avenir px-4 py-2 rounded-md bg-white/10 border-[0.5px] border-[#ede6d6] lg:mt-[28px] hover:bg-[#ede6d6] hover:text-[#131313] shadow-lg transition-all tracking-widest backdrop-blur-sm'>
                             VIEW COLLECTION
                         </button>
                     </Link>
