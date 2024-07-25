@@ -101,7 +101,7 @@ const ContactCard = () => {
     }
 
     emailjs
-      .sendForm('service_0ezieoa', 'template_2ce02ob', form.current!, { publicKey: 'XcW2jNaUhvrtFXOHS' })
+      .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_CONNECTION_TEMPLATE_ID, form.current!, { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY })
       .then(
         () => {
           console.log('SUCCESS!');
