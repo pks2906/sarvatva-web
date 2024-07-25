@@ -125,14 +125,26 @@ const ContactCard = () => {
           <h1 className="font-cormorant text-[#131313] text-3xl md:text-4xl">Let's Connect</h1>
           <p className="font-avenir font-light text-lg md:text-xl text-[#131313]/50">Over a cup of Tea...</p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 my-4 md:my-8 gap-x-4 md:gap-x-24 gap-y-4 md:gap-y-10 w-[90%]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-4 md:gap-x-24 gap-y-4 md:gap-y-6 w-[90%]">
           <input type="hidden" name="phone" value={phoneNumber} />
-          <input name="company" id="company" type="text" placeholder="Company / Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
-          <input name="country" id="country" type="text" placeholder="Country *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
-          <input name="first_name" id="first_name" type="text" placeholder="First Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
-          <input name="last_name" id="last_name" type="text" placeholder="Last Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
-          <input name="user_email" id="user_email" type="email" placeholder="Email *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
-          <PhoneInputField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+          <div className="flex flex-col my-4 md:my-2">
+            <input name="company" id="company" type="text" placeholder="Company / Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          </div>
+          <div className="flex flex-col my-4 md:my-2">
+            <input name="country" id="country" type="text" placeholder="Country *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          </div>
+          <div className="flex flex-col my-4 md:my-2">
+            <input name="first_name" id="first_name" type="text" placeholder="First Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          </div>
+          <div className="flex flex-col my-4 md:my-2">
+            <input name="last_name" id="last_name" type="text" placeholder="Last Name *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          </div>
+          <div className="flex flex-col my-4 md:my-2">
+            <input name="user_email" id="user_email" type="email" placeholder="Email *" className="text-[#131313] font-avenir font-light md:text-xl px-4 py-2 border-b border-[#131313] rounded-none" onChange={handleChange} required />
+          </div>
+          <div className="flex flex-col my-4 md:my-2">
+            <PhoneInputField phoneNumber={phoneNumber} setPhoneNumber={setPhoneNumber} />
+          </div>
         </div>
         <div className="flex flex-col my-4 w-[90%]">
           <textarea name="message" id="message" placeholder="Tell us more about your vision? We would love to collaborate with you *" className="border rounded-md text-sm md:text-lg font-avenir placeholder:italic border-[#131313] p-2 resize-none" rows={6} onChange={handleChange} required></textarea>
