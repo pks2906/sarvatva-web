@@ -5,10 +5,12 @@ import { motion } from "framer-motion"
 
 const AboutCollection = () => {
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isTablet, setIsTablet] = useState(window.innerWidth > 768 && window.innerWidth < 1024);
 
     useEffect(() => {
         const handleResize = () => {
           setIsMobile(window.innerWidth <= 768);
+          setIsTablet(window.innerWidth > 768 && window.innerWidth < 1024);
         };
     
         window.addEventListener("resize", handleResize);
@@ -22,16 +24,16 @@ const AboutCollection = () => {
         });
       };
 
-    if (isMobile) {
+    if (isMobile || isTablet) {
         return(
             <div className='h-[100vh] bg-[#131313] flex justify-center mx-auto'>
                 <div className='relative flex flex-col items-center'>
                     <div className='flex h-[40vh] w-[90%] mt-20'>
                         <MobileShlok />
                     </div>
-                    <div className='flex flex-col justify-center h-[40vh] mx-auto w-[80%] gap-y-[28px] text-center'>
+                    <div className='flex flex-col justify-center h-[40vh] mx-auto w-[80%] md:w-[60%] gap-y-[28px] text-center'>
                         <motion.p 
-                            className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'
+                            className='font-cormorant text-balance md:text-xl leading-[1.5rem] text-[#EDE6D6]'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
@@ -39,7 +41,7 @@ const AboutCollection = () => {
                             <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                         </motion.p>
                         <motion.p 
-                            className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'
+                            className='font-cormorant text-balance md:text-xl leading-[1.5rem] text-[#EDE6D6]'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
@@ -47,7 +49,7 @@ const AboutCollection = () => {
                         The collection narrates the story of how creation began from that one Supreme Consciousness
                         </motion.p>
                         <motion.p 
-                            className='font-cormorant text-balance leading-[1.5rem] text-[#EDE6D6]'
+                            className='font-cormorant text-balance md:text-xl leading-[1.5rem] text-[#EDE6D6]'
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 1 }}
@@ -72,7 +74,7 @@ const AboutCollection = () => {
         <div className='flex mx-auto'>
             <div className='flex flex-col items-center text-start justify-center w-[40%] mx-auto'>
                 <motion.p 
-                    className='font-cormorant md:text-2xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
+                    className='font-cormorant md:text-xl md:w-[65%] mb-[30px] text-balance md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
@@ -80,15 +82,15 @@ const AboutCollection = () => {
                     <b>Tad Ekam</b> is Inspired by the “Nasadiya Sukta”, the 129th Hymn of the 10th Mandala of the Rig Veda. 
                 </motion.p>
                 <motion.p 
-                    className='font-cormorant text-balance md:text-2xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
+                    className='font-cormorant text-balance md:text-xl md:w-[65%] mb-[30px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
                 >
-                    The collection narrates the story of how creation began from that one Supreme Consciousness
+                    The collection narrates the story of how creation began from that one Supreme Consciousness.
                 </motion.p>
                 <motion.p 
-                    className='font-cormorant text-balance md:text-2xl md:w-[65%] mb-[40px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
+                    className='font-cormorant text-balance md:text-xl md:w-[65%] mb-[30px] md:leading-9 leading-[1.75rem] text-[#EDE6D6]'
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ duration: 1 }}
