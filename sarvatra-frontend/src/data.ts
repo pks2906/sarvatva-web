@@ -12,6 +12,13 @@ import mob4 from './assets/mobile3.jpg'
 import mob5 from './assets/mobile9.jpg'
 import mob6 from './assets/mobile5.jpg'
 import mob7 from './assets/mobile6.jpg'
+import ipad1 from './assets/ipad1.png'
+import ipad2 from './assets/ipad2.png'
+import ipad3 from './assets/ipad3.png'
+import ipad4 from './assets/ipad4.png'
+import ipad5 from './assets/ipad5.png'
+import ipad6 from './assets/ipad6.png'
+import ipad7 from './assets/ipad7.png'
 
 export const products = [
     {
@@ -21,7 +28,8 @@ export const products = [
         description: `The <strong>Side Table</strong> born from a single log of wood, it symbolises the beginning of manifestation from the supreme consciousness.`,
         src: img1,
         align: "right-[5%]",
-        mobile: mob1
+        mobile: mob1,
+        ipad: ipad1
     },
     {
         id: 2,
@@ -30,7 +38,8 @@ export const products = [
         description: "The <strong>Coffee Table</strong> like a seed, is a metaphor for desire, which is the first thought, on the journey from consciousness to manifestation.",
         src: img2,
         align: "left-[10%]",
-        mobile: mob2
+        mobile: mob2,
+        ipad: ipad2
     },
     {
         id: 3,
@@ -39,7 +48,8 @@ export const products = [
         description: "The <strong>Console Table</strong> depicts the manifestation of our desire, with an imagery alike the graceful unfolding of the sacred lotus flower.",
         src: img3,
         align: "right-[5%]",
-        mobile: mob3
+        mobile: mob3,
+        ipad: ipad3
     },
     {
         id: 4,
@@ -48,7 +58,8 @@ export const products = [
         description: "The <strong>Lounge Chair’s</strong> back rest, depict the dilemmas we face. Whereas, the seating, is that calm space that helps one take a stepback, and plan the bigger leap.",
         src: img4,
         align: "left-[10%]",
-        mobile: mob4
+        mobile: mob4,
+        ipad: ipad4
     },
     {
         id: 5,
@@ -57,7 +68,8 @@ export const products = [
         description: "The <strong>Couch’s</strong> backrest keeps the two seating spaces intact, depicting the state of balance between colliding thoughts, which makes space for peace.",
         src: img5,
         align: "right-[5%]",
-        mobile: mob5
+        mobile: mob5,
+        ipad: ipad5
     },
     {
         id: 6,
@@ -66,7 +78,8 @@ export const products = [
         description: "The lines of the <strong>Console Cabinet</strong> though seem wavy but are actually straight, creating an illusion, which is also the reality of creation. It’s all, still a mystery!",
         src: img6,
         align: "left-[10%]",
-        mobile: mob6
+        mobile: mob6,
+        ipad: ipad6
     },
     {
         id: 7,
@@ -75,6 +88,7 @@ export const products = [
         description: "The flowing lines on the <strong>Bed’s Backrest</strong> with no definite start or end, depict that phase of our life where we finally realise, creation is beyond our control and we let it take its natural flow.",
         src: img7,
         align: "right-[5%]",
-        mobile: mob7
+        mobile: mob7,
+        ipad: ipad7
     }
 ]

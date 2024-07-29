@@ -8,18 +8,21 @@ interface ProductProps {
   src: string;
   align: string;
   mobile: string;
+  ipad: string;
   productName: string;
 }
 
-const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, mobile, productName }) => {
+const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, mobile, ipad, productName }) => {
   const [isFormOpen, setIsFormOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const [isIpad, setIsIpad] = useState(window.innerWidth > 768 && window.innerWidth <= 1024);
   const [isKeyboardOpen, setIsKeyboardOpen] = useState(false);
   const scrollTimeoutRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
+      setIsIpad(window.innerWidth > 768 && window.innerWidth <= 1024);
     };
 
     window.addEventListener("resize", handleResize);
@@ -80,7 +83,7 @@ const ProductCard: React.FC<ProductProps> = ({ title, description, src, align, m
       <div 
         className={`h-[100vh]`}
         style={{
-          background: `url(${isMobile ? mobile : src})`,
+          background: `url(${isMobile ? mobile : (isIpad ? ipad : src)})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover'
         }}
