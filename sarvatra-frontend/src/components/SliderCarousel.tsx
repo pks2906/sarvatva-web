@@ -7,17 +7,23 @@ import img3 from '../assets/revised4.jpg';
 import mob1 from '../assets/mobile2.jpg';
 import mob2 from '../assets/mobile3.jpg';
 import mob3 from '../assets/mobile4.jpg';
+import ipad1 from '../assets/ipad2.png';
+import ipad2 from '../assets/revised1.jpg';
+import ipad3 from '../assets/ipad4.png';
 import { useEffect, useState } from 'react';
 import './CarouselComponent.css'; // Import custom CSS for styling
 
 const CarouselComponent = () => {
     const items = [img1, img2, img3];
     const mobileItems = [mob2, mob1, mob3];
+    const ipadItems = [ipad1, ipad2, ipad3];
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isIpad, setIsIpad] = useState(window.innerWidth > 768 && window.innerWidth <= 1024);
 
     useEffect(() => {
         const handleResize = () => {
             setIsMobile(window.innerWidth <= 768);
+            setIsIpad(window.innerWidth > 768 && window.innerWidth <= 1024);
         };
 
         window.addEventListener("resize", handleResize);
@@ -65,7 +71,7 @@ const CarouselComponent = () => {
     return (
         <div className="navigation-wrapper">
             <div ref={sliderRef} className="keen-slider carousel-container">
-                {(isMobile ? mobileItems : items).map((item, index) => (
+                {(isMobile ? mobileItems : (isIpad ? ipadItems : items)).map((item, index) => (
                     <div className="keen-slider__slide" key={index}>
                         <ImageCarousel image={item} />
                     </div>
@@ -102,11 +108,13 @@ const CarouselComponent = () => {
 };
 
 const ImageCarousel = ({ image }: { image: string }) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isIpad, setIsIpad] = useState(window.innerWidth >= 768 && window.innerWidth <= 1024);
 
     useEffect(() => {
         const handleResize = () => {
-            setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth < 768);
+            setIsIpad(window.innerWidth >= 768 && window.innerWidth <= 1024);
         };
 
         window.addEventListener("resize", handleResize);
@@ -117,10 +125,11 @@ const ImageCarousel = ({ image }: { image: string }) => {
         return (
             <div className='h-screen'>
                 <div 
-                    className='relative h-full'
+                    className='relative h-full '
                     style={{
                         background: `url(${image})`,
-                        backgroundSize: 'cover'
+                        backgroundSize: isIpad ? 'clip' : 'cover',
+                        backgroundPosition: isIpad ? 'center' : ''
                     }}
                 >
                     <div className='absolute top-1 w-full h-screen flex flex-col justify-between items-center'>
