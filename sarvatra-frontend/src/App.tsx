@@ -23,7 +23,7 @@ function App() {
                 background: '#EDE6D6',
                 border: '0.5px solid #131313'
               }
-            },
+            },//
             error: {
               iconTheme: {
                 primary: '#131313',
