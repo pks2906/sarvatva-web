@@ -2,7 +2,7 @@ import img1 from "./assets/display1.jpg"
 import img2 from "./assets/display2.jpg"
 import img3 from "./assets/display3.jpg"
 import img4 from "./assets/display4.jpg"
-import img5 from "./assets/display5-1.jpg"
+import img5 from "./assets/displayNew.jpg"
 import img6 from "./assets/display6.jpg"
 import img7 from "./assets/display7.jpg"
 import mob1 from './assets/mobile1.jpg'
