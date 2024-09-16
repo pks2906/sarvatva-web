@@ -24,10 +24,10 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const menuVariants = {
-    hidden: { opacity: 0, height: 0},
-    visible: { opacity: 1, height: 'auto'}
-  };
+  // const menuVariants = {
+  //   hidden: { opacity: 0, height: 0},
+  //   visible: { opacity: 1, height: 'auto'}
+  // };
 
   return (
     <div className={`font-cormorant fixed flex px-4 items-center justify-between top-0 left-0 w-full z-20 transition-colors duration-300 ${scrolled ? 'bg-[#131313] shadow-sm' : ''}`}>
@@ -62,24 +62,25 @@ const Navbar = () => {
       </div>
       <AnimatePresence>
         {menuOpen && (
-          <motion.div
-            className={`lg:hidden absolute top-[110%] w-[95%] md:w-[50%] left-0 right-0 mx-auto md:mr-6 transition bg-[#131313] shadow-lg border-[0.5px] border-[#EDE6D6]/10 rounded-md flex flex-col items-start`}
-            initial="hidden"
-            animate="visible"
-            exit="hidden"
-            variants={menuVariants}
-            transition={{ duration: 0.3 }}
-          >
-            <Link to={'/collection'} className='w-full'>
-              <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>Vedic Furniture</p>
-            </Link>
-            <Link to={'/about'} className='w-full'>
-              <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>The Craft of Wholeness</p>
-            </Link>
-            <Link to={'/contact'} className='w-full'>
-              <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 px-6`}>Let's Connect</p>
-            </Link>
-          </motion.div>
+          // <motion.div
+          //   className={`lg:hidden absolute top-[110%] w-[95%] md:w-[50%] left-0 right-0 mx-auto md:mr-6 transition bg-[#131313] shadow-lg border-[0.5px] border-[#EDE6D6]/10 rounded-md flex flex-col items-start`}
+          //   initial="hidden"
+          //   animate="visible"
+          //   exit="hidden"
+          //   variants={menuVariants}
+          //   transition={{ duration: 0.3 }}
+          // >
+          //   <Link to={'/collection'} className='w-full'>
+          //     <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>Vedic Furniture</p>
+          //   </Link>
+          //   <Link to={'/about'} className='w-full'>
+          //     <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>The Craft of Wholeness</p>
+          //   </Link>
+          //   <Link to={'/contact'} className='w-full'>
+          //     <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 px-6`}>Let's Connect</p>
+          //   </Link>
+          // </motion.div>
+          <DropdownMenu />
         )}
       </AnimatePresence>
     </div>
@@ -87,3 +88,28 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+const DropdownMenu = () => {
+  return (
+    <motion.div 
+      className='absolute mt-4 left-0 right-0 top-full z-50 w-[95%] md:w-[50%] mx-auto '
+      initial={{ opacity: 0, y: -10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      transition={{ duration: 0.25 }}
+    >
+            <div className='shadow-md flex flex-col bg-[#131313] border-[0.5px] border-[#EDE6D6]/10 rounded-md shadow-lg'>
+              <Link to={'/collection'} className='w-full'>
+                <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>Vedic Furniture</p>
+              </Link>
+              <Link to={'/about'} className='w-full'>
+                <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 border-b-[0.5px] border-[#EDE6D6]/10 px-6`}>The Craft of Wholeness</p>
+              </Link>
+              <Link to={'/contact'} className='w-full'>
+                <p className={`py-4 text-[18px] transition-all text-[#EDE6D6]/80 px-6`}>Let's Connect</p>
+              </Link>
+            </div>
+        </motion.div>
+  )
+}
