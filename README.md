@@ -1,4 +1,4 @@
-## Project Report: Sarvatva – The Craft of Wholeness
+## Sarvatva – The Craft of Wholeness
 
 ### Project Overview
 Sarvatva: The Craft of Wholeness, developed from June 2024 to July 2024, is a platform designed to showcase a range of artisanal products through an engaging and visually appealing interface. The project aimed to attract over 1,000 users in its first month by offering a seamless user experience and visually captivating animations.
