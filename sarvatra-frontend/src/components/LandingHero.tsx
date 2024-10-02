@@ -2,7 +2,7 @@ import img from '../assets/hero-banner.jpg'
 import mob from '../assets/hero-mobile.jpg'
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-
+//
 const LandingHero = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
