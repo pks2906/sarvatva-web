@@ -7,19 +7,25 @@ import img3 from '../assets/revised4.jpg';
 import mob1 from '../assets/mobile2.jpg';
 import mob2 from '../assets/mobile3.jpg';
 import mob3 from '../assets/mobile4.jpg';
+import ipad1 from '../assets/ipad2.png';
+import ipad2 from '../assets/revised1.jpg';
+import ipad3 from '../assets/ipad4.png';
 import { useEffect, useState } from 'react';
 import './CarouselComponent.css'; // Import custom CSS for styling
 
 const CarouselComponent = () => {
     const items = [img1, img2, img3];
     const mobileItems = [mob2, mob1, mob3];
+    const ipadItems = [ipad1, ipad2, ipad3];
     const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isIpad, setIsIpad] = useState(window.innerWidth > 768 && window.innerWidth <= 1024);
 
     useEffect(() => {
         const handleResize = () => {
-          setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth <= 768);
+            setIsIpad(window.innerWidth > 768 && window.innerWidth <= 1024);
         };
-    
+
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -65,7 +71,7 @@ const CarouselComponent = () => {
     return (
         <div className="navigation-wrapper">
             <div ref={sliderRef} className="keen-slider carousel-container">
-                {(isMobile ? mobileItems : items).map((item, index) => (
+                {(isMobile ? mobileItems : (isIpad ? ipadItems : items)).map((item, index) => (
                     <div className="keen-slider__slide" key={index}>
                         <ImageCarousel image={item} />
                     </div>
@@ -102,13 +108,15 @@ const CarouselComponent = () => {
 };
 
 const ImageCarousel = ({ image }: { image: string }) => {
-    const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+    const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+    const [isIpad, setIsIpad] = useState(window.innerWidth >= 768 && window.innerWidth <= 1024);
 
     useEffect(() => {
         const handleResize = () => {
-          setIsMobile(window.innerWidth <= 768);
+            setIsMobile(window.innerWidth < 768);
+            setIsIpad(window.innerWidth >= 768 && window.innerWidth <= 1024);
         };
-    
+
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -117,10 +125,11 @@ const ImageCarousel = ({ image }: { image: string }) => {
         return (
             <div className='h-screen'>
                 <div 
-                    className='relative h-full'
+                    className='relative h-full '
                     style={{
                         background: `url(${image})`,
-                        backgroundSize: 'cover'
+                        backgroundSize: isIpad ? 'clip' : 'cover',
+                        backgroundPosition: isIpad ? 'center' : ''
                     }}
                 >
                     <div className='absolute top-1 w-full h-screen flex flex-col justify-between items-center'>
@@ -154,12 +163,12 @@ const ImageCarousel = ({ image }: { image: string }) => {
                 }}
             >
                 <div className="absolute inset-0 top-[35%] left-[10%] text-[#EDE6D6] flex flex-col">
-                    <h1 className='font-cormorant text-6xl md:mb-[8px]'>Vedic Furniture</h1>
-                    <p className='font-avenir text-balance font-light md:w-[30%] text-[20px] leading-9 my-10'>
+                    <h1 className='font-cormorant text-6xl lg:mb-[8px]'>Vedic Furniture</h1>
+                    <p className='font-avenir text-balance font-light md:w-[40%] lg:w-[30%] text-[20px] leading-9 my-10'>
                     Each design is an intention, to manifest <span className='font-bold'>“That One”</span>, into tangibility through <b className='font-bold'>sculptural, organic</b> and <b className='font-bold'>tactile</b> forms, harmoniously blending art with functionality.
                     </p>
                     <Link to={'/collection'}>
-                        <button className='md:w-[200px] font-medium text-sm font-avenir px-4 py-2 rounded-md bg-white/10 border-[0.5px] border-[#ede6d6] md:mt-[28px] hover:bg-[#ede6d6] hover:text-[#131313] shadow-lg transition-all tracking-widest backdrop-blur-sm'>
+                        <button className='lg:w-[200px] font-medium text-sm font-avenir px-4 py-2 rounded-md bg-white/10 border-[0.5px] border-[#ede6d6] lg:mt-[28px] hover:bg-[#ede6d6] hover:text-[#131313] shadow-lg transition-all tracking-widest backdrop-blur-sm'>
                             VIEW COLLECTION
                         </button>
                     </Link>

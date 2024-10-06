@@ -14,6 +14,7 @@ type TeamMember = {
 
 const AboutTeam = () => {
   const [selectedCard, setSelectedCard] = useState<number | null>(null);
+  const [prevScrollPosition, setPrevScrollPosition] = useState<number>(0);
   const cardRefs = useRef<(HTMLDivElement | null)[]>([]);
   const containerRef = useRef<HTMLDivElement | null>(null);
 
@@ -27,9 +28,10 @@ const AboutTeam = () => {
     if (selectedCard === index) {
       setSelectedCard(null);
       setTimeout(() => {
-        containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        window.scrollTo({ top: prevScrollPosition, behavior: 'smooth' });
       }, 200);
     } else {
+      setPrevScrollPosition(window.scrollY);
       setSelectedCard(index);
       setTimeout(() => {
         cardRefs.current[index]?.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -62,15 +64,15 @@ const AboutTeam = () => {
   ];
 
   return (
-    <div ref={containerRef} className="bg-white min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:mb-12 md:pt-0 pt-20">
+    <div ref={containerRef} className="bg-white min-h-screen flex flex-col items-center justify-center px-4 md:px-0 md:mb-12 lg:pt-0 pt-20">
       
       <h1 className="text-4xl md:text-6xl font-cormorant text-center text-[#131313]">The Alchemists</h1>
       <p className="mb-8 mt-2 font-avenir text-neutral-500 md:text-lg text-center">
         Crafting Extraordinary from the Mundane
       </p>
-      <div className="flex flex-col md:flex-row w-full mt-4">
+      <div className="flex flex-col lg:flex-row w-full mt-4">
         {teamMembers.map((member, index) => (
-          <div key={index} className="w-full md:w-1/3 flex flex-col items-center mb-16 md:mb-0 relative">
+          <div key={index} className="w-full lg:w-1/3 flex flex-col items-center mb-16 lg:mb-0 relative">
             <motion.div
               className="flex flex-col items-center"
               initial={{ opacity: 0, y: 50 }}
@@ -100,7 +102,7 @@ const AboutTeam = () => {
             </motion.div>
             {selectedCard === index && (
               <motion.div
-                className="w-full flex flex-col items-center justify-center py-4 px-8 mt-4"
+                className="w-full md:w-[45%] lg:w-full flex flex-col items-center justify-center py-4 px-8 mt-4"
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5 }}

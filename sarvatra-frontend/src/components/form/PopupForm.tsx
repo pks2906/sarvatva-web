@@ -106,7 +106,7 @@ const PopupForm: React.FC<PopupFormProps> = ({ onClose, productName }) => {
 
     if (form.current) {
       emailjs
-        .sendForm('service_0ezieoa', 'template_trvb30j', form.current, { publicKey: 'XcW2jNaUhvrtFXOHS' })
+        .sendForm(import.meta.env.VITE_SERVICE_ID, import.meta.env.VITE_QUOTATION_TEMPLATE_ID, form.current!, { publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY })
         .then(
           () => {
             console.log('SUCCESS!');
